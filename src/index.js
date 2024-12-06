@@ -1,12 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
+import styles from './styles/index.module.css';
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom"
 import Home from './pages/Home'
 import About from './pages/About'
 import Contact from './pages/Contact'
 import Project from './pages/Project'
+import Github from './pages/Github';
 import Layout from './components/Layout';
+
 
 function App() {
   return (
@@ -20,6 +22,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/project" element={<Project />} />
+        <Route path="/Github" element={<Github />} />
       </Route>
     </Routes>
     </BrowserRouter>
