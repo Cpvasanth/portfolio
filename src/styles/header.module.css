@@ -1,47 +1,45 @@
-/* General Styling for Header Bar */
-.headerBar {
-    color: white;
-    width: 100%;
-    height: 3em;
-    padding: 0.5em;
+/* header.module.css */
+.headerContainer {
     background-color: #1f2428;
+    border: 1px solid black;
+    width: max-content;
+    color: rgb(255, 255, 255);
+}
+
+.headerBar {
+    width: 100%;
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    list-style: none;
+    color: white;
 }
 
-/* Image Styling for vsCode Icon */
-.vsCode {
-    max-width: 1.5em;
-    height: auto;
-}
-
-/* Image Styling for Traffic Light Buttons */
-.threeColour {
-    max-width: 2.5em;
-    height: auto;
-}
-
-/* Remove default list bullets for the <ul> */
-.headerBar {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-}
-
-/* Individual List Item Styling */
 .headerBar li {
+    width: 100%;
+
     margin: 0 15px;
 }
 
-/* Hover Effect for List Items */
 .headerBar li:hover {
     opacity: 0.8;
     cursor: pointer;
 }
 
+.title {
+    font-weight: bold;
+    font-size: 1em;
+}
 
+.vsCode,
+.threeColour {
+    height: 1em;
+}
+
+.vsCode {
+    max-width: 1.5em;
+}
+
+.threeColour {
+    max-width: 2.5em;
+}

@@ -1,29 +1,29 @@
+// Header.jsx
 import React from "react";
 import vscode from "../assets/visual-studio-code.png";
 import threeColour from "../assets/Iconless_Buttons.png";
-import styles from '../styles/header.module.css';
+import styles from "../styles/header.module.css";
 
-export default function Header() {
+export default function Header({ header }) {
     return (
-        <header>
-            <ul className={styles.headerBar}>
+        <header className={styles.headerContainer}>
+            <ul className={`${styles.headerBar} ${header}`}>
                 <li>
                     <img 
                         src={vscode} 
-                        alt="vsCode" 
+                        alt="Visual Studio Code logo" 
                         className={styles.vsCode} 
                     />
                 </li>
-                <li>Vasa - vsCode Portfolio</li>                
+                <li className={styles.title}>Vasa - vsCode Portfolio</li>
                 <li>
                     <img 
                         src={threeColour} 
-                        alt="traffic light buttons" 
-                        className={styles.threeColour } 
+                        alt="Traffic light buttons" 
+                        className={styles.threeColour} 
                     />
                 </li>
             </ul>
-
         </header>
     );
 }
