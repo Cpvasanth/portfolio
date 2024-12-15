@@ -6,8 +6,8 @@ import styles from "../styles/header.module.css";
 
 export default function Header({ header }) {
     return (
-        <header className={styles.headerContainer}>
-            <ul className={`${styles.headerBar} ${header}`}>
+        <header className={`${styles.headerContainer} ${header}`}>
+            <ul className={`${styles.headerBar} `}>
                 <li>
                     <img 
                         src={vscode} 

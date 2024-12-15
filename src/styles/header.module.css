@@ -1,12 +1,18 @@
 /* header.module.css */
 .headerContainer {
+    width: 100%;
+    margin: 0;
     background-color: #1f2428;
-    border: 1px solid black;
-    width: max-content;
     color: rgb(255, 255, 255);
 }
 
+.headerContainer > ul {
+    width: 100%;
+
+}
+
 .headerBar {
+
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -16,9 +22,8 @@
 }
 
 .headerBar li {
-    width: 100%;
+padding: 0.5em;
 
-    margin: 0 15px;
 }
 
 .headerBar li:hover {
@@ -27,19 +32,20 @@
 }
 
 .title {
+    margin: 0.2em 0;
     font-weight: bold;
-    font-size: 1em;
+    font-size: 0.8em;
 }
 
-.vsCode,
+/* .vsCode,
 .threeColour {
-    height: 1em;
-}
+    height: 1.5em;
+} */
 
 .vsCode {
-    max-width: 1.5em;
+    width: 1.2em;
 }
 
 .threeColour {
-    max-width: 2.5em;
+    width: 1.5em;
 }
