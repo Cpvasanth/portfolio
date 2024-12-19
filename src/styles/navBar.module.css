@@ -1,8 +1,9 @@
 .navbar {
     display: flex;
     background-color: #1f2428;
-    height: 3em;
-    overflow-x: scroll;
+    height: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 .link {
@@ -15,10 +16,17 @@
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    padding: 0 1em 0 1em;
+    padding: 1em 1em;
     
 }
 
 .active {
-    background-color: 24292e ;
+    border-top: 1px solid #ff9500;
+    background-color: #24292e ;
+}
+
+@media only screen and (max-width: 600px) { 
+    .navbar {
+        overflow-x: scroll;
+    }
 }

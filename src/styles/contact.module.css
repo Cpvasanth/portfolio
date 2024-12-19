@@ -1,0 +1,25 @@
+.Contact {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    color: #d4d4d4;
+    background-color: #24292e;
+}
+
+ul {
+    list-style-type: none;    
+}
+
+li {
+    margin-left: 0.8em;
+}
+
+.number {
+    color: #808080;
+}
+
+.socials , a {
+    color: #ac4b1e;
+    text-decoration: none;
+}
+

@@ -4,6 +4,7 @@
     margin: 0;
     background-color: #1f2428;
     color: rgb(255, 255, 255);
+    border-bottom: 1px solid rgba(23, 22, 22, 0.662);
 }
 
 .headerContainer > ul {

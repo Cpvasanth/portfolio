@@ -28,7 +28,7 @@ export default function NavBar(prop) {
                     isActive ? `${styles.link} ${styles.active}` : styles.link
                 }
             >
-                Project.css
+                Project.js
             </NavLink>
             <NavLink 
                 to="/github" 
@@ -36,7 +36,7 @@ export default function NavBar(prop) {
                     isActive ? `${styles.link} ${styles.active}` : styles.link
                 }
             >
-                Github
+                Github.md
             </NavLink>
             <NavLink 
                 to="/contact" 
@@ -44,7 +44,7 @@ export default function NavBar(prop) {
                     isActive ? `${styles.link} ${styles.active}` : styles.link
                 }
             >
-                Contact.md
+                Contact.css
             </NavLink>
         </nav>
     );
