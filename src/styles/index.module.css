@@ -50,6 +50,8 @@ body {
 .main {
   grid-column: 2 / -1;   /* Main occupies the second column */
   grid-row: 3 / 6;      /* Main occupies the third row */
+  background-color: #24292e;
+  overflow-y: auto;
 }
 
 .footer {

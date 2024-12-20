@@ -22,6 +22,16 @@ export default function NavBar(prop) {
             >
                 About.html
             </NavLink>
+
+            <NavLink 
+                to="/contact" 
+                className={({ isActive }) => 
+                    isActive ? `${styles.link} ${styles.active}` : styles.link
+                }
+            >
+                Contact.css
+            </NavLink>
+            
             <NavLink 
                 to="/project" 
                 className={({ isActive }) => 
@@ -38,14 +48,7 @@ export default function NavBar(prop) {
             >
                 Github.md
             </NavLink>
-            <NavLink 
-                to="/contact" 
-                className={({ isActive }) => 
-                    isActive ? `${styles.link} ${styles.active}` : styles.link
-                }
-            >
-                Contact.css
-            </NavLink>
+
         </nav>
     );
 }
