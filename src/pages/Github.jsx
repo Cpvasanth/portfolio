@@ -13,6 +13,7 @@ const Portfolio = () => {
           'https://api.github.com/users/cpvasanth/repos'
         );
         setRepos(response.data);
+        // console.log(response.data);
       } catch (error) {
         console.error("Error fetching repos:", error);
       } finally {
@@ -30,7 +31,7 @@ const Portfolio = () => {
   return (
     <div className={styles.github}>
       <h1>My GitHub Repositories</h1>
-      
+
       <ul>
         {repos.map((repo) => (
           <li key={repo.id}>
