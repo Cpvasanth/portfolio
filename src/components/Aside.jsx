@@ -7,23 +7,63 @@ import email from "../assets/email-1-svgrepo-com.svg";
 import setting from "../assets/setting-5-svgrepo-com.svg";
 import user from "../assets/user-circle-svgrepo-com.svg";
 import styles from '../styles/aside.module.css';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 export default function Aside(prop) {
     return (
-        <aside className={ `${styles.aside}  ${prop.aside}`}>
+        <aside className={`${styles.aside} ${prop.aside}`}>
             <div className={styles.asideContainer}>
                 <ul className={styles.ul}>
-                    <Link to=""><img className={styles.img} src={files} alt="Files" /></Link>
-                    <Link to="Github"><img className={styles.img} src={github} alt="Github" /></Link>
-                    <Link to="project"><img className={styles.img} src={code} alt="Project" /></Link>
-                    <Link to="About"><img className={styles.img} src={pen} alt="About" /></Link>
-                    <Link to="contact"><img className={styles.img} src={email} alt="Contact" /></Link>
+                    <NavLink 
+                        to="" 
+                        className={({ isActive }) => isActive ? styles.active : ""}
+                    >
+                        <img className={styles.img} src={files} alt="Files" />
+                    </NavLink>
+                    <NavLink 
+                        to="Github" 
+                        className={({ isActive }) => isActive ? styles.active : ""}
+                    >
+                        <img className={styles.img} src={github} alt="Github" />
+                    </NavLink>
+                    <NavLink 
+                        to="project" 
+                        className={({ isActive }) => isActive ? styles.active : ""}
+                    >
+                        <img className={styles.img} src={code} alt="Project" />
+                    </NavLink>
+                    <NavLink 
+                        to="About" 
+                        className={({ isActive }) => isActive ? styles.active : ""}
+                    >
+                        <img className={styles.img} src={pen} alt="About" />
+                    </NavLink>
+                    <NavLink 
+                        to="contact" 
+                        className={({ isActive }) => isActive ? styles.active : ""}
+                    >
+                        <img className={styles.img} src={email} alt="Contact" />
+                    </NavLink>
                 </ul>
 
                 <ul className={styles.ul}>
-                    <Link to=""><img className={styles.img} src={user} alt="User" /></Link>
-                    <Link to=""><img className={styles.img} id={styles.setting} src={setting} alt="Settings" /></Link>
+                    <NavLink 
+                        to="" 
+                        className={({ isActive }) => isActive ? styles.active : ""}
+                    >
+                        <img className={styles.img} src={user} alt="User" />
+                    </NavLink>
+                    <NavLink 
+                        to="" 
+                        className={({ isActive }) => isActive ? styles.active : ""}
+                    >
+                        <img 
+                            className={styles.img} 
+                            id={styles.setting} 
+                            src={setting} 
+                            alt="Settings" 
+                        />
+                    </NavLink>
                 </ul>
             </div>
         </aside>
