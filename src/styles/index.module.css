@@ -81,6 +81,10 @@ body {
     grid-column: 1 / 2;   /* Aside occupies the first column */
     grid-row: 2 / 6;      /* Aside occupies the second row */
   }
+
+  .explore {
+    display: none;
+  }
   
   .main {
     grid-column: 2 / -1;   /* Main occupies the second column */
