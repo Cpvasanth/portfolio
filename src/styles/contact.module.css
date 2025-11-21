@@ -6,11 +6,11 @@
     background-color: #24292e;
 }
 
-ul {
-    list-style-type: none;    
+.Contact ul {
+    list-style-type: none;
 }
 
-li {
+.Contact li {
     margin-left: 0.8em;
 }
 
@@ -18,8 +18,8 @@ li {
     color: #808080;
 }
 
-.socials , a {
+.socials,
+.Contact a {
     color: #ac4b1e;
     text-decoration: none;
 }
-

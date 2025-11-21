@@ -1,0 +1,61 @@
+.titleBar {
+    height: 30px;
+    background-color: var(--vscode-title-bar-bg);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #cccccc;
+    font-size: 13px;
+    user-select: none;
+}
+
+.iconContainer {
+    padding: 0 8px;
+    display: flex;
+    align-items: center;
+}
+
+.menuBar {
+    display: flex;
+    gap: 10px;
+    margin-left: 5px;
+}
+
+.menuBar span {
+    cursor: pointer;
+    padding: 2px 5px;
+}
+
+.menuBar span:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+}
+
+.title {
+    flex: 1;
+    text-align: center;
+    color: #999999;
+    font-size: 12px;
+}
+
+.windowControls {
+    display: flex;
+    height: 100%;
+}
+
+.control {
+    width: 46px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.control:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.control.close:hover {
+    background-color: #e81123;
+    color: white;
+}

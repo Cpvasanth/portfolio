@@ -1,102 +1,45 @@
-/* index css */
-
-* {
-  margin: 0;
-  padding: 0;
-  /* box-sizing: border-box; */
-}
-
-html {
-  font-size: 16px;
-  scroll-behavior: smooth;
-}
-
-body {
-  width: 100%;
-  height: 100%;
-  line-height: 1.6;
-  color: #333;
-  background-color: #f9f9f9;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-.container {
-  width: 100%;
+.layout {
+  display: flex;
+  flex-direction: column;
   height: 100vh;
-  display: grid;
-  grid-template-columns: 3em 7em  4em repeat(5, 1fr);  /* 6 equal columns */
-  grid-template-rows: 2em 50px repeat(3, 1fr) 1.5em;     /* 6 equal rows */
+  width: 100vw;
+  overflow: hidden;
 }
 
-.header {
-  grid-column: 1 / -1;  /* Header spans across all columns */
-  grid-row: 1 / 2;      /* Header occupies the first row */
+.mainContainer {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
 }
 
-.nav {
-  grid-column: 4 / -1;   /* Nav occupies the second column */
-  grid-row: 2 / 3;      /* Nav occupies the second row */
+.editorArea {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  background-color: var(--vscode-editor-bg);
+  overflow: hidden;
 }
 
-.aside {
-  grid-column: 1 / 2;   /* Aside occupies the first column */
-  grid-row: 2 / 6;      /* Aside occupies the second row */
-}
-
-.explore {
-  grid-column: 2 / 4;   /* Aside occupies the first column */
-  grid-row: 2 / 6;      /* Aside occupies the second row */
-
-}
-
-.main {
-  grid-column: 4 / -1;   /* Main occupies the second column */
-  grid-row: 3 / 6;      /* Main occupies the third row */
-  background-color: #24292e;
+.editorContent {
+  flex: 1;
   overflow-y: auto;
+  padding: 0;
+  position: relative;
 }
 
-.footer {
-  grid-column: 1 / -1;  /* Footer spans across all columns */
-  grid-row: 6 / 7;      /* Footer occupies the last row */
+/* Scrollbar for editor content */
+.editorContent::-webkit-scrollbar {
+  width: 14px;
 }
 
-
-@media (max-width: 768px) {
-  .header {
-    grid-column: 1 / -1;  /* Header spans across all columns */
-    grid-row: 1 / 2;      /* Header occupies the first row */
-  }
-  
-  .nav {
-    grid-column: 2 / -1;   /* Nav occupies the second column */
-    grid-row: 2 / 3;      /* Nav occupies the second row */
-  }
-  
-  .aside {
-    grid-column: 1 / 2;   /* Aside occupies the first column */
-    grid-row: 2 / 6;      /* Aside occupies the second row */
-  }
-
-  .explore {
-    display: none;
-  }
-  
-  .main {
-    grid-column: 2 / -1;   /* Main occupies the second column */
-    grid-row: 3 / 6;      /* Main occupies the third row */
-    background-color: #24292e;
-    overflow-y: auto;
-  }
-  
-  .footer {
-    grid-column: 1 / -1;  /* Footer spans across all columns */
-    grid-row: 6 / 7;      /* Footer occupies the last row */
-  }
+.editorContent::-webkit-scrollbar-track {
+  background: transparent;
 }
 
+.editorContent::-webkit-scrollbar-thumb {
+  background: var(--vscode-scrollbar);
+}
 
+.editorContent::-webkit-scrollbar-thumb:hover {
+  background: var(--vscode-scrollbar-hover);
+}

@@ -1,0 +1,113 @@
+.codeContainer {
+    font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+    font-size: 14px;
+    line-height: 1.5;
+    padding: 20px;
+    color: #d4d4d4;
+}
+
+.line {
+    display: block;
+    white-space: pre;
+}
+
+.indent1 {
+    margin-left: 20px;
+}
+
+.indent2 {
+    margin-left: 40px;
+}
+
+.indent3 {
+    margin-left: 60px;
+}
+
+/* Syntax Highlighting Colors */
+.keyword {
+    color: #569cd6;
+}
+
+/* blue */
+.control {
+    color: #c586c0;
+}
+
+/* purple */
+.function {
+    color: #dcdcaa;
+}
+
+/* yellow */
+.variable {
+    color: #9cdcfe;
+}
+
+/* light blue */
+.string {
+    color: #ce9178;
+}
+
+/* orange */
+.number {
+    color: #b5cea8;
+}
+
+/* light green */
+.comment {
+    color: #6a9955;
+}
+
+/* green */
+.tag {
+    color: #569cd6;
+}
+
+/* blue */
+.attrName {
+    color: #9cdcfe;
+}
+
+/* light blue */
+.className {
+    color: #4ec9b0;
+}
+
+/* teal */
+.operator {
+    color: #d4d4d4;
+}
+
+/* white */
+.punctuation {
+    color: #ffd700;
+}
+
+/* yellow brackets */
+
+/* Interactive Elements */
+.link {
+    color: #ce9178;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.link:hover {
+    color: #d7ba7d;
+}
+
+.button {
+    display: inline-block;
+    color: #ffffff;
+    padding: 4px 12px;
+    text-decoration: none;
+    border-radius: 2px;
+    margin: 0 5px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 12px;
+}
+
+.button:hover {
+    /* margin-bottom: 1px dotted red; */
+    background-color: #1177bb;
+}

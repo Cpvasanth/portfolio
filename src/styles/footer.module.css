@@ -1,14 +1,38 @@
-.footer {
-    width: 100%;
-    /* height: ; */
-    color: whitesmoke;
-    background-color: #007acc;
-    margin: 0;
-    padding: 0;
+.statusBar {
+    height: 22px;
+    background-color: var(--vscode-status-bar-bg);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    user-select: none;
+    padding: 0 8px;
 }
 
-.footer > h1 {
-    font-size: 0.8em;
-    text-align: center;
-    
+.leftSection,
+.rightSection {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    padding: 0 8px;
+    cursor: pointer;
+    height: 100%;
+}
+
+.item:hover {
+    background-color: rgba(255, 255, 255, 0.12);
+}
+
+.icon {
+    margin-right: 5px;
+}
+
+.bell {
+    font-size: 10px;
 }

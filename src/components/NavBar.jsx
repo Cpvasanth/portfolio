@@ -1,54 +1,71 @@
+"use client";
 import React from "react";
-import { NavLink } from "react-router-dom";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import styles from "../styles/navBar.module.css";
+import FileIcon from "./FileIcon";
 
 
-export default function NavBar(prop) {
+export default function NavBar() {
+    const pathname = usePathname();
+
+    const isActive = (path) => {
+        if (path === "/" && pathname === "/") return true;
+        if (path !== "/" && pathname.startsWith(path)) return true;
+        return false;
+    };
+
     return (
-        <nav className={`${styles.navbar} ${prop.nav}`}>
-            <NavLink 
-                to="/" 
-                className={({ isActive }) => 
-                    isActive ? `${styles.link} ${styles.active}` : styles.link
-                }
-            >
-              Home.jsx 
-            </NavLink>
-            <NavLink 
-                to="/about" 
-                className={({ isActive }) => 
-                    isActive ? `${styles.link} ${styles.active}` : styles.link
-                }
-            >
-                About.html
-            </NavLink>
-
-            <NavLink 
-                to="/contact" 
-                className={({ isActive }) => 
-                    isActive ? `${styles.link} ${styles.active}` : styles.link
-                }
-            >
-                Contact.css
-            </NavLink>
-            
-            <NavLink 
-                to="/project" 
-                className={({ isActive }) => 
-                    isActive ? `${styles.link} ${styles.active}` : styles.link
-                }
-            >
-                Project.js
-            </NavLink>
-            <NavLink 
-                to="/github" 
-                className={({ isActive }) => 
-                    isActive ? `${styles.link} ${styles.active}` : styles.link
-                }
-            >
-                Github.md
-            </NavLink>
-
-        </nav>
+        <>
+            <nav className={styles.tabs}>
+                <Link
+                    href="/"
+                    className={`${styles.tab} ${isActive("/") ? styles.active : ""}`}
+                >
+                    <FileIcon name="home.jsx" size={18} />
+                    <span className={styles.label}>home.jsx</span>
+                    <span className={styles.close}>×</span>
+                </Link>
+                <Link
+                    href="/about"
+                    className={`${styles.tab} ${isActive("/about") ? styles.active : ""}`}
+                >
+                    <FileIcon name="about.html" size={18} />
+                    <span className={styles.label}>about.html</span>
+                    <span className={styles.close}>×</span>
+                </Link>
+                <Link
+                    href="/contact"
+                    className={`${styles.tab} ${isActive("/contact") ? styles.active : ""}`}
+                >
+                    <FileIcon name="contact.css" size={18} />
+                    <span className={styles.label}>contact.css</span>
+                    <span className={styles.close}>×</span>
+                </Link>
+                <Link
+                    href="/project"
+                    className={`${styles.tab} ${isActive("/project") ? styles.active : ""}`}
+                >
+                    <FileIcon name="project.js" size={18} />
+                    <span className={styles.label}>project.js</span>
+                    <span className={styles.close}>×</span>
+                </Link>
+                <Link
+                    href="/github"
+                    className={`${styles.tab} ${isActive("/github") ? styles.active : ""}`}
+                >
+                    <FileIcon name="github.json" size={18} />
+                    <span className={styles.label}>github.json</span>
+                    <span className={styles.close}>×</span>
+                </Link>
+            </nav>
+            <div className={styles.breadcrumbs}>
+                <span className={styles.breadcrumbItem}>src</span>
+                <span className={styles.breadcrumbSeparator}>›</span>
+                <span className={styles.breadcrumbItem}>
+                    {pathname === "/" ? "home.jsx" : pathname.slice(1) + (pathname === "/about" ? ".html" : pathname === "/contact" ? ".css" : pathname === "/project" ? ".js" : pathname === "/github" ? ".json" : "")}
+                </span>
+            </div>
+        </>
     );
 }

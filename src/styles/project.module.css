@@ -1,82 +1,35 @@
-
-
-.project {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
+.code {
+    font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+    font-size: 14px;
+    line-height: 1.5;
     padding: 20px;
 }
 
-.projectContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background: #1f2428;
-    /* border: 1px solid #ddd; */
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    max-width: 300px;
-    text-align: center;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+.object {
+    margin-left: 20px;
 }
 
-.projectContainer:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+.property {
+    margin-left: 20px;
 }
 
-.projectImage {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    margin-bottom: 15px;
+.nestedProperty {
+    margin-left: 40px;
 }
 
-.projectTitle {
-    font-size: 1.5em;
-    margin: 10px 0;
-    color: #ffffff;
+.key {
+    color: #9cdcfe;
 }
 
-.projectDescription {
-    font-size: 1em;
-    margin-bottom: 15px;
-    color: #eae2e2;
+.string {
+    color: #ce9178;
 }
 
-.projectTags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-bottom: 15px;
+.bracket {
+    color: #ffd700;
 }
 
-.tag {
-    background: #007acc;
-    color: white;
-    padding: 5px 10px;
-    border-radius: 4px;
-    font-size: 0.9em;
-}
-
-.projectButtons {
-    display: flex;
-    gap: 10px;
-}
-
-.viewButton {
-    background: #cc3000;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 0.9em;
-    transition: background 0.3s ease;
-}
-
-.viewButton:hover {
-    background: #005fa3;
+.link {
+    color: #ce9178;
+    text-decoration: underline;
 }

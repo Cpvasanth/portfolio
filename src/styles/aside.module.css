@@ -1,36 +1,42 @@
-aside > img {
-    width: 2em;
-}
-
-
-.asideContainer {
-    
+.activityBar {
+    width: 50px;
     height: 100%;
-    width: 100%;
+    background-color: var(--vscode-activity-bar-bg);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background-color: #24292e;
 }
 
-.ul {
-
+.topIcons,
+.bottomIcons {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 0.7em 0 0 0.2em;
 }
 
-.img {
-    fill: aliceblue;
-    width: 2em;
-    padding: 0 0.5em;
+.iconContainer {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    opacity: 0.4;
+    border-left: 2px solid transparent;
 }
 
-#setting {
-    width: 2.5em;
+.iconContainer:hover {
+    opacity: 1;
 }
 
 .active {
-    border-left: 3px solid #ff9500;
+    opacity: 1;
+    border-left: 2px solid var(--vscode-text);
+}
+
+.icon {
+    width: 24px;
+    height: 24px;
+    filter: invert(0.8);
+    /* Make icons light grey */
 }
