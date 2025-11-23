@@ -111,3 +111,22 @@
     /* margin-bottom: 1px dotted red; */
     background-color: #1177bb;
 }
+
+@media (max-width: 768px) {
+    .codeContainer {
+        padding: 10px;
+        font-size: 13px;
+    }
+
+    .indent1 {
+        margin-left: 10px;
+    }
+
+    .indent2 {
+        margin-left: 20px;
+    }
+
+    .indent3 {
+        margin-left: 30px;
+    }
+}

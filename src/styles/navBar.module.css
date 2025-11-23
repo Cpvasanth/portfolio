@@ -93,3 +93,14 @@
     margin: 0 5px;
     color: #a9a9a9;
 }
+
+@media (max-width: 768px) {
+    .tab {
+        min-width: 80px;
+        padding: 0 5px;
+    }
+
+    .breadcrumbs {
+        padding-left: 10px;
+    }
+}
