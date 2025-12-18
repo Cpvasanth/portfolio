@@ -4,7 +4,10 @@ import axios from 'axios';
 import EditorLayout from "../../components/Layout/EditorLayout";
 import styles from "../../styles/github.module.css";
 
+import { useSettings } from "../../context/SettingsContext";
+
 const Github = () => {
+    const { fontSize, wordWrap } = useSettings();
     const [repos, setRepos] = useState([]);
     const [loading, setLoading] = useState(true);
 
@@ -37,7 +40,14 @@ const Github = () => {
 
     return (
         <EditorLayout>
-            <div className={styles.code}>
+            <div
+                className={styles.code}
+                style={{
+                    fontSize: `${fontSize}px`,
+                    whiteSpace: wordWrap === 'on' ? 'pre-wrap' : 'pre',
+                    wordBreak: wordWrap === 'on' ? 'break-word' : 'normal'
+                }}
+            >
                 <span className={styles.bracket}>[</span>
                 {repos.map((repo, index) => (
                     <div key={repo.id} className={styles.object}>

@@ -3,9 +3,11 @@ import React, { useState, useRef, useEffect } from "react";
 import styles from "../styles/terminal.module.css";
 import { useRouter } from "next/navigation";
 import { useLayout } from "../context/LayoutContext";
+import { useSettings } from "../context/SettingsContext";
 
 export default function Terminal() {
     const { isTerminalOpen, setIsTerminalOpen } = useLayout();
+    const { setTheme } = useSettings();
     const [activeTab, setActiveTab] = useState('TERMINAL');
     const [input, setInput] = useState("");
     const [history, setHistory] = useState([
@@ -72,7 +74,7 @@ export default function Terminal() {
                 newHistory.push({ type: 'output', content: 'Please contact me at cpvasanth@proton.me' });
                 break;
             case 'cat about.txt':
-                newHistory.push({ type: 'output', content: 'I am a passionate Blockchain Developer...' });
+                newHistory.push({ type: 'output', content: 'I am a passionate Software Developer...' });
                 router.push('/about');
                 break;
             case 'hire':
@@ -86,8 +88,24 @@ export default function Terminal() {
                 break;
             case '':
                 break;
+            case 'recruiter':
+                newHistory.push({ type: 'output', content: 'Opening Recruiter Mode...' });
+                router.push('/recruiter');
+                break;
             default:
-                newHistory.push({ type: 'output', content: `'${cmd}' is not recognized as an internal or external command.` });
+                if (trimmedCmd.startsWith('mode -')) {
+                    const theme = trimmedCmd.split('-')[1];
+                    const validThemes = ['dark', 'light', 'high-contrast', 'blue', 'monokai', 'github-dark', 'solarized-light', 'dracula'];
+
+                    if (validThemes.includes(theme)) {
+                        newHistory.push({ type: 'output', content: `Switching theme to ${theme}...` });
+                        setTheme(theme);
+                    } else {
+                        newHistory.push({ type: 'output', content: `Theme '${theme}' not found. Available themes: ${validThemes.join(', ')}` });
+                    }
+                } else {
+                    newHistory.push({ type: 'output', content: `'${cmd}' is not recognized as an internal or external command.` });
+                }
         }
 
         setHistory(newHistory);

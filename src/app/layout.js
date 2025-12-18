@@ -13,7 +13,7 @@ import Terminal from "../components/Terminal";
 
 export const metadata = {
     title: "Vasanthakumar C - VS Code Portfolio",
-    description: "Portfolio of Vasanthakumar C, a Blockchain Developer",
+    description: "Portfolio of Vasanthakumar C, a Software Developer",
 };
 
 export default function RootLayout({ children }) {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { SiHtml5, SiCss3, SiJavascript, SiReact, SiJson } from 'react-icons/si';
+import { SiHtml5, SiCss3, SiJavascript, SiReact, SiJson, SiSolidity } from 'react-icons/si';
 import { VscJson, VscMarkdown } from 'react-icons/vsc';
 
 const FileIcon = ({ name, size = 16 }) => {
@@ -17,6 +17,8 @@ const FileIcon = ({ name, size = 16 }) => {
             return <SiReact size={size} color="#61DAFB" />;
         case 'json':
             return <VscJson size={size} color="#F7DF1E" />;
+        case 'sol':
+            return <SiSolidity size={size} color="#363636" />;
         case 'md':
             return <VscMarkdown size={size} color="#408BCC" />; // VS Code markdown blue
         default:

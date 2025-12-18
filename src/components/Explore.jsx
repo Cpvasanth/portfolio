@@ -7,6 +7,7 @@ import { usePathname } from "next/navigation";
 
 export default function Explore() {
     const [toggle, setToggle] = React.useState(true);
+    const [blockchainToggle, setBlockchainToggle] = React.useState(true);
     const pathname = usePathname();
 
     return (
@@ -57,6 +58,31 @@ export default function Explore() {
                                 <FileIcon name="readme.md" size={18} />
                             </div>
                             <span className={`${styles.fileName} ${pathname === '/readme' ? styles.activeFile : ''}`}>README.md</span>
+                        </Link>
+                    </div>
+                )}
+            </div>
+            <div className={styles.section}>
+                <div
+                    className={styles.sectionHeader}
+                    onClick={() => setBlockchainToggle(!blockchainToggle)}
+                >
+                    <span className={`${styles.arrow} ${blockchainToggle ? styles.open : ''}`}>›</span>
+                    <span className={styles.sectionTitle}>BLOCKCHAIN</span>
+                </div>
+                {blockchainToggle && (
+                    <div className={styles.fileTree}>
+                        <Link href="/blockchain" className={styles.file}>
+                            <div className={styles.fileIconWrapper}>
+                                <FileIcon name="overview.sol" size={18} />
+                            </div>
+                            <span className={`${styles.fileName} ${pathname === '/blockchain' ? styles.activeFile : ''}`}>overview.sol</span>
+                        </Link>
+                        <Link href="/blockchain/projects" className={styles.file}>
+                            <div className={styles.fileIconWrapper}>
+                                <FileIcon name="projects.sol" size={18} />
+                            </div>
+                            <span className={`${styles.fileName} ${pathname === '/blockchain/projects' ? styles.activeFile : ''}`}>projects.sol</span>
                         </Link>
                     </div>
                 )}

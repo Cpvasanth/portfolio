@@ -1,39 +1,33 @@
 "use client";
 import React from "react";
-import styles from "../../styles/project.module.css";
-import vanLifeImg from "../../assets/vanlife-project-min.png";
-import EditorLayout from "../../components/Layout/EditorLayout";
+import styles from "../../../styles/project.module.css";
+// reusing the same image/styles as main project page for consistency, can be updated later
+import vanLifeImg from "../../../assets/vanlife-project-min.png";
+import EditorLayout from "../../../components/Layout/EditorLayout";
 
-import { useSettings } from "../../context/SettingsContext";
+import { useSettings } from "../../../context/SettingsContext";
 
-const projects = [
-    {
-        name: "Rentopia",
-        description: "Rentopia is a modern house renting app that simplifies the process of finding, listing, and managing rental properties. It connects renters with verified landlords, offering intuitive search filters, virtual tours, secure payments, and instant messaging — all in one platform. Whether you’re looking for a cozy apartment or managing multiple listings, Rentopia makes renting fast, transparent, and hassle-free",
-        img: vanLifeImg.src,
-        tags: ["NextJs", "React", "TailwindCSS", "Typescript"],
-        liveDemo: "https://rentopia.synt-x.com/",
-        codeLink: "https://github.com/Cpvasanth/rentopia",
-    },
+const blockchainProjects = [
     {
         name: "Cloud Chain",
-        description: "CloudChain is a next-generation hybrid cloud storage platform inspired by Google Drive. It offers secure file storage and management by blending centralized cloud infrastructure with decentralized storage solutions like IPFS/Filecoin. Built with a modern tech stack — React 19, Next.js 15, Appwrite, Tailwind CSS, ShadCN, and TypeScript — CloudChain ensures speed, privacy, and scalability for the future of personal and enterprise file storage.",
+        description: "A decentralized storage solution leveraging IPFS and Filecoin for secure and persistent data storage, integrated with a Web2-friendly interface.",
         img: vanLifeImg.src,
-        tags: ["NextJS", "Dapp", "Supabase"],
+        tags: ["Solidity", "IPFS", "Filecoin", "React"],
         liveDemo: "https://github.com/Cpvasanth/cloud-chain",
         codeLink: "https://github.com/Cpvasanth/cloud-chain",
     },
     {
-        name: "Kurukshetra Store",
-        description: "An e-commerce platform for buying goods.",
+        name: "DeFi Exchange",
+        description: "A decentralized exchange (DEX) prototype allowing users to swap ERC-20 tokens trustlessly.",
         img: vanLifeImg.src,
-        tags: ["NextJs", "typescript", "TailwindCSS", "Firebase"],
-        liveDemo: "https://kurukshetra-pi.vercel.app/",
-        codeLink: "https://github.com/Cpvasanth/Kurukshetra-V1",
+        tags: ["Solidity", "Ethers.js", "Hardhat"],
+        liveDemo: "#", // Placeholder
+        codeLink: "#", // Placeholder
     },
+    // Add more blockchain specific projects here
 ];
 
-export default function Project() {
+export default function BlockchainProjects() {
     const { fontSize, wordWrap } = useSettings();
 
     return (
@@ -46,8 +40,11 @@ export default function Project() {
                     wordBreak: wordWrap === 'on' ? 'break-word' : 'normal'
                 }}
             >
+                <div className={styles.line}>
+                    <span className={styles.comment}>// Array of Blockchain Projects</span>
+                </div>
                 <span className={styles.bracket}>[</span>
-                {projects.map((project, index) => (
+                {blockchainProjects.map((project, index) => (
                     <div key={index} className={styles.object}>
                         <span className={styles.bracket}>{"  {"}</span>
                         <div className={styles.property}>
@@ -65,6 +62,9 @@ export default function Project() {
                             ))}
                             <span className={styles.bracket}>]</span>,
                         </div>
+                        <div className={styles.nestedProperty}>
+                            <span className={styles.key}>"contract"</span>: <span className={styles.keyword}>address</span>(<span className={styles.string}>"0x123...abc"</span>),
+                        </div>
                         <div className={styles.property}>
                             <span className={styles.key}>"links"</span>: <span className={styles.bracket}>{"{"}</span>
                         </div>
@@ -77,7 +77,7 @@ export default function Project() {
                         <div className={styles.property}>
                             <span className={styles.bracket}>{"}"}</span>
                         </div>
-                        <span className={styles.bracket}>{"  }"}</span>{index < projects.length - 1 ? "," : ""}
+                        <span className={styles.bracket}>{"  }"}</span>{index < blockchainProjects.length - 1 ? "," : ""}
                     </div>
                 ))}
                 <span className={styles.bracket}>]</span>

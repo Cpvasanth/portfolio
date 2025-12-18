@@ -1,34 +1,22 @@
 "use client";
-import React, { useEffect } from "react";
+import React from "react";
 import styles from "../../styles/code.module.css";
 import EditorLayout from "../../components/Layout/EditorLayout";
-import useHistory from "../../hooks/useHistory";
+import { useSettings } from "../../context/SettingsContext";
 
 export default function About() {
-    const [bio, setBio, undoBio, redoBio] = useHistory(
-        "I am a passionate Blockchain Developer with experience in building decentralized applications (dApps) and smart contracts. I love exploring new technologies and solving complex problems.",
-        "about-bio"
-    );
-
-    // Keyboard shortcuts for Undo/Redo
-    useEffect(() => {
-        const handleKeyDown = (e) => {
-            if ((e.ctrlKey || e.metaKey) && e.key === 'z') {
-                e.preventDefault();
-                if (e.shiftKey) {
-                    redoBio();
-                } else {
-                    undoBio();
-                }
-            }
-        };
-        window.addEventListener('keydown', handleKeyDown);
-        return () => window.removeEventListener('keydown', handleKeyDown);
-    }, [undoBio, redoBio]);
+    const { fontSize, wordWrap } = useSettings();
 
     return (
         <EditorLayout>
-            <div className={styles.codeContainer}>
+            <div
+                className={styles.codeContainer}
+                style={{
+                    fontSize: `${fontSize}px`,
+                    whiteSpace: wordWrap === 'on' ? 'pre-wrap' : 'pre',
+                    wordBreak: wordWrap === 'on' ? 'break-word' : 'normal'
+                }}
+            >
                 <div className={styles.line}>
                     <span className={styles.tag}>&lt;!DOCTYPE html&gt;</span>
                 </div>
@@ -46,14 +34,8 @@ export default function About() {
                 </div>
                 <div className={styles.line}>
                     <span className={styles.indent3}>
-                        <span
-                            className={styles.text}
-                            contentEditable
-                            suppressContentEditableWarning
-                            onBlur={(e) => setBio(e.target.innerText)}
-                        >
-                            {bio}
-                        </span>
+                        <span className={styles.text}>
+I am a passionate Software Developer with experience building reliable applications and solving complex technical problems. I enjoy exploring new technologies, writing clean code, and turning ideas into well-crafted software.                        </span>
                     </span>
                 </div>
                 <div className={styles.line}>

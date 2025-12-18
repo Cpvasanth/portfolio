@@ -5,7 +5,7 @@ import EditorLayout from '../../components/Layout/EditorLayout';
 import { useSettings } from '../../context/SettingsContext';
 
 const Settings = () => {
-    const { theme, setTheme, fontSize, setFontSize } = useSettings();
+    const { theme, setTheme, fontSize, setFontSize, wordWrap, setWordWrap } = useSettings();
 
     return (
         <EditorLayout>
@@ -38,7 +38,6 @@ const Settings = () => {
                             <option value="github-dark">GitHub Dark</option>
                             <option value="solarized-light">Solarized Light</option>
                             <option value="dracula">Dracula</option>
-                            <option value="recruiter">Recruiter Mode</option>
                         </select>
                     </div>
 
@@ -64,7 +63,11 @@ const Settings = () => {
                     <div className={styles.settingItem}>
                         <label className={styles.settingLabel}>Editor: Word Wrap</label>
                         <p className={styles.settingDescription}>Controls how lines should wrap.</p>
-                        <select className={styles.select} defaultValue="off">
+                        <select
+                            className={styles.select}
+                            value={wordWrap}
+                            onChange={(e) => setWordWrap(e.target.value)}
+                        >
                             <option value="off">off</option>
                             <option value="on">on</option>
                             <option value="wordWrapColumn">wordWrapColumn</option>

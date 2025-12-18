@@ -2,36 +2,22 @@
 import React, { useEffect } from "react";
 import styles from "../../styles/code.module.css";
 import EditorLayout from "../../components/Layout/EditorLayout";
-import useHistory from "../../hooks/useHistory";
+
+import { useSettings } from "../../context/SettingsContext";
 
 export default function Contact() {
-    const [email, setEmail, undoEmail, redoEmail] = useHistory("cpvasanth@proton.me", "contact-email");
-    const [github, setGithub, undoGithub, redoGithub] = useHistory("github.com/Cpvasanth", "contact-github");
-    const [linkedin, setLinkedin, undoLinkedin, redoLinkedin] = useHistory("linkedin.com/in/cpvasanth", "contact-linkedin");
-
-    // Keyboard shortcuts for Undo/Redo
-    useEffect(() => {
-        const handleKeyDown = (e) => {
-            if ((e.ctrlKey || e.metaKey) && e.key === 'z') {
-                e.preventDefault();
-                if (e.shiftKey) {
-                    redoEmail();
-                    redoGithub();
-                    redoLinkedin();
-                } else {
-                    undoEmail();
-                    undoGithub();
-                    undoLinkedin();
-                }
-            }
-        };
-        window.addEventListener('keydown', handleKeyDown);
-        return () => window.removeEventListener('keydown', handleKeyDown);
-    }, [undoEmail, redoEmail, undoGithub, redoGithub, undoLinkedin, redoLinkedin]);
+    const { fontSize, wordWrap } = useSettings();
 
     return (
         <EditorLayout>
-            <div className={styles.codeContainer}>
+            <div
+                className={styles.codeContainer}
+                style={{
+                    fontSize: `${fontSize}px`,
+                    whiteSpace: wordWrap === 'on' ? 'pre-wrap' : 'pre',
+                    wordBreak: wordWrap === 'on' ? 'break-word' : 'normal'
+                }}
+            >
                 <div className={styles.line}>
                     <span className={styles.selector}>.socials</span> <span className={styles.punctuation}>{'{'}</span>
                 </div>
@@ -52,37 +38,13 @@ export default function Contact() {
                     <span className={styles.selector}>.contact-item</span> <span className={styles.punctuation}>{'{'}</span>
                 </div>
                 <div className={styles.line}>
-                    <span className={styles.indent1}><span className={styles.property}>email</span>: <span className={styles.string}>"
-                        <span
-                            contentEditable
-                            suppressContentEditableWarning
-                            onBlur={(e) => setEmail(e.target.innerText)}
-                        >
-                            {email}
-                        </span>
-                        "</span>;</span>
+                    <span className={styles.indent1}><span className={styles.property}>email</span>: <span className={styles.string}><a href="mailto:cpvasanth@proton.me">cpvasanth@proton.me</a></span>;</span>
                 </div>
                 <div className={styles.line}>
-                    <span className={styles.indent1}><span className={styles.property}>github</span>: <span className={styles.string}>"
-                        <span
-                            contentEditable
-                            suppressContentEditableWarning
-                            onBlur={(e) => setGithub(e.target.innerText)}
-                        >
-                            {github}
-                        </span>
-                        "</span>;</span>
+                    <span className={styles.indent1}><span className={styles.property}>github</span>: <span className={styles.string}><a href="https://github.com/Cpvasanth">github.com/Cpvasanth</a></span>;</span>
                 </div>
                 <div className={styles.line}>
-                    <span className={styles.indent1}><span className={styles.property}>linkedin</span>: <span className={styles.string}>"
-                        <span
-                            contentEditable
-                            suppressContentEditableWarning
-                            onBlur={(e) => setLinkedin(e.target.innerText)}
-                        >
-                            {linkedin}
-                        </span>
-                        "</span>;</span>
+                    <span className={styles.indent1}><span className={styles.property}>linkedin</span>: <span className={styles.string}><a href="https://linkedin.com/in/cpvasanth">linkedin.com/in/cpvasanth</a></span>;</span>
                 </div>
                 <div className={styles.line}>
                     <span className={styles.punctuation}>{'}'}</span>

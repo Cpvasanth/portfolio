@@ -1,35 +1,23 @@
 "use client";
-import React, { useEffect } from "react";
+import React from "react";
 import Link from "next/link";
 import styles from "../styles/code.module.css";
 import EditorLayout from "../components/Layout/EditorLayout";
-import useHistory from "../hooks/useHistory";
+import { useSettings } from "../context/SettingsContext";
 
 export default function Home() {
-    const [name, setName, undoName, redoName, canUndo, canRedo] = useHistory("Vasanthakumar C", "home-name");
-    const [role, setRole, undoRole, redoRole] = useHistory("Software Engineer", "home-role");
-
-    // Keyboard shortcuts for Undo/Redo
-    useEffect(() => {
-        const handleKeyDown = (e) => {
-            if ((e.ctrlKey || e.metaKey) && e.key === 'z') {
-                e.preventDefault();
-                if (e.shiftKey) {
-                    redoName();
-                    redoRole();
-                } else {
-                    undoName();
-                    undoRole();
-                }
-            }
-        };
-        window.addEventListener('keydown', handleKeyDown);
-        return () => window.removeEventListener('keydown', handleKeyDown);
-    }, [undoName, redoName, undoRole, redoRole]);
+    const { fontSize, wordWrap } = useSettings();
 
     return (
         <EditorLayout>
-            <div className={styles.codeContainer}>
+            <div
+                className={styles.codeContainer}
+                style={{
+                    fontSize: `${fontSize}px`,
+                    whiteSpace: wordWrap === 'on' ? 'pre-wrap' : 'pre',
+                    wordBreak: wordWrap === 'on' ? 'break-word' : 'normal'
+                }}
+            >
                 <div className={styles.line}>
                     <span className={styles.keyword}>import</span> <span className={styles.variable}>React</span> <span className={styles.keyword}>from</span> <span className={styles.string}>'react'</span>;
                 </div>
@@ -48,26 +36,12 @@ export default function Home() {
                 </div>
                 <div className={styles.line}>
                     <span className={styles.indent3}>&lt;<span className={styles.tag}>h1</span>&gt;</span>
-                    <span
-                        className={styles.className}
-                        contentEditable
-                        suppressContentEditableWarning
-                        onBlur={(e) => setName(e.target.innerText)}
-                    >
-                        {name}
-                    </span>
+                    <span className={styles.className}>Vasanthakumar C</span>
                     <span className={styles.tag}>&lt;/h1&gt;</span>
                 </div>
                 <div className={styles.line}>
                     <span className={styles.indent3}>&lt;<span className={styles.tag}>h2</span>&gt;</span>
-                    <span
-                        className={styles.className}
-                        contentEditable
-                        suppressContentEditableWarning
-                        onBlur={(e) => setRole(e.target.innerText)}
-                    >
-                        {role}
-                    </span>
+                    <span className={styles.className}>Software Engineer</span>
                     <span className={styles.tag}>&lt;/h2&gt;</span>
                 </div>
                 <div className={styles.line}>

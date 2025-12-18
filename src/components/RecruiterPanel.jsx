@@ -29,7 +29,7 @@ const RecruiterPanel = () => {
 
                 <div className={styles.section}>
                     <h3>Experience</h3>
-                    <p>Blockchain Developer with a strong background in building decentralized applications and modern web interfaces.</p>
+                    <p>Software Developer with a strong background in building decentralized applications and modern web interfaces.</p>
                 </div>
 
                 <div className={styles.actions}>

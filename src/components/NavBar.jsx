@@ -58,12 +58,20 @@ export default function NavBar() {
                     <span className={styles.label}>github.json</span>
                     <span className={styles.close}>×</span>
                 </Link>
+                <Link
+                    href="/readme"
+                    className={`${styles.tab} ${isActive("/readme") ? styles.active : ""}`}
+                >
+                    <FileIcon name="readme.md" size={18} />
+                    <span className={styles.label}>readme.md</span>
+                    <span className={styles.close}>×</span>
+                </Link>
             </nav>
             <div className={styles.breadcrumbs}>
                 <span className={styles.breadcrumbItem}>src</span>
                 <span className={styles.breadcrumbSeparator}>›</span>
                 <span className={styles.breadcrumbItem}>
-                    {pathname === "/" ? "home.jsx" : pathname.slice(1) + (pathname === "/about" ? ".html" : pathname === "/contact" ? ".css" : pathname === "/project" ? ".js" : pathname === "/github" ? ".json" : "")}
+                    {pathname === "/" ? "home.jsx" : pathname.slice(1) + (pathname === "/about" ? ".html" : pathname === "/contact" ? ".css" : pathname === "/project" ? ".js" : pathname === "/github" ? ".json" : pathname === "/readme" ? ".md" : "")}
                 </span>
             </div>
         </>

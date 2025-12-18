@@ -1,0 +1,81 @@
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    background-color: #fff;
+    line-height: 1.6;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 40px;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 20px;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 2.5em;
+    color: #2c3e50;
+}
+
+.header h2 {
+    margin: 10px 0;
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: normal;
+}
+
+.contactInfo a {
+    color: #3498db;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.contactInfo a:hover {
+    text-decoration: underline;
+}
+
+.section {
+    margin-bottom: 30px;
+}
+
+.section h3 {
+    color: #2c3e50;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 1.1em;
+}
+
+.skillsList {
+    list-style: none;
+    padding: 0;
+}
+
+.skillsList li {
+    margin-bottom: 8px;
+}
+
+.project {
+    margin-bottom: 20px;
+}
+
+.project h4 {
+    margin: 0 0 5px 0;
+    color: #34495e;
+}
+
+.project p {
+    margin: 0 0 5px 0;
+    color: #555;
+}
+
+.education h4 {
+    margin: 0 0 5px 0;
+    color: #34495e;
+}
