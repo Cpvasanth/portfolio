@@ -56,6 +56,9 @@ export const metadata = {
             'max-snippet': -1,
         },
     },
+    verification: {
+        google: "jN4j-ppj7qu0aVshoAQX6Rwct9cIKu5ZB-JY9HbmUxA",
+    },
 };
 
 import JsonLd from "../components/JsonLd";
