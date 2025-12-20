@@ -1,3 +1,7 @@
+"use client";
+import React, { useState, useEffect, useRef } from 'react';
+import styles from '../styles/terminal.module.css';
+
 const GRID_WIDTH = 60;
 const GRID_HEIGHT = 20;
 const INITIAL_SNAKE = [{ x: 10, y: 10 }];
