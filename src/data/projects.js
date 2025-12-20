@@ -11,6 +11,7 @@ export const projects = [
         tags: ["Next.js", "Stripe", "Firebase"],
         liveDemo: "https://fashion.synt-x.com/",
         codeLink: "https://github.com/Cpvasanth/fashion/",
+        caseStudyLink: "/case-studies/fashion-ecommerce",
     },
     {
         name: "Rentopia",
@@ -30,7 +31,7 @@ export const projects = [
     },
     {
         name: "Kurukshetra Store",
-        description: "An e-commerce platform for buying goods.",
+        description: "A sport match management web app developed for PSP Medical College.",
         img: kurukshetraImg,
         tags: ["NextJs", "typescript", "TailwindCSS", "Firebase"],
         liveDemo: "https://kurukshetra-pi.vercel.app/",

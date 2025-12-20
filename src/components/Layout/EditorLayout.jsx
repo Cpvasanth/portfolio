@@ -23,7 +23,7 @@ export default function EditorLayout({ children, preview }) {
                     </div>
                 ))}
             </div>
-            <div className={styles.content} ref={contentRef}>
+            <div className={`${styles.content} fade-in`} ref={contentRef}>
                 {children}
             </div>
             {minimap === 'on' && !isSplitView && (

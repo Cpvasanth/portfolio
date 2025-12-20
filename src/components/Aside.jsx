@@ -35,39 +35,40 @@ export default function Aside() {
     return (
         <aside className={styles.activityBar}>
             <div className={styles.topIcons}>
-                <Link href="/" className={`${styles.iconContainer} ${isActive("/") ? styles.active : ""}`} onClick={() => handleFileClick('home.jsx', '/', 'home.jsx')}>
-                    <Image src={files} alt="Explorer" width={24} height={24} className={styles.icon} />
+                <Link href="/" aria-label="Explorer" className={`${styles.iconContainer} ${isActive("/") ? styles.active : ""}`} onClick={() => handleFileClick('home.jsx', '/', 'home.jsx')} aria-current={isActive("/") ? "page" : undefined}>
+                    <Image src={files} alt="" width={24} height={24} className={styles.icon} aria-hidden="true" />
                 </Link>
-                <Link href="/github" className={`${styles.iconContainer} ${isActive("/github") ? styles.active : ""}`} onClick={() => handleFileClick('github.json', '/github', 'github.json')}>
-                    <Image src={github} alt="Source Control" width={24} height={24} className={styles.icon} />
+                <Link href="/github" aria-label="Source Control" className={`${styles.iconContainer} ${isActive("/github") ? styles.active : ""}`} onClick={() => handleFileClick('github.json', '/github', 'github.json')} aria-current={isActive("/github") ? "page" : undefined}>
+                    <Image src={github} alt="" width={24} height={24} className={styles.icon} aria-hidden="true" />
                 </Link>
-                <Link href="/project" className={`${styles.iconContainer} ${isActive("/project") ? styles.active : ""}`} onClick={() => handleFileClick('project.js', '/project', 'project.js')}>
-                    <Image src={code} alt="Projects" width={24} height={24} className={styles.icon} />
+                <Link href="/project" aria-label="Projects" className={`${styles.iconContainer} ${isActive("/project") ? styles.active : ""}`} onClick={() => handleFileClick('project.js', '/project', 'project.js')} aria-current={isActive("/project") ? "page" : undefined}>
+                    <Image src={code} alt="" width={24} height={24} className={styles.icon} aria-hidden="true" />
                 </Link>
-                <Link href="/recruiter" className={`${styles.iconContainer} ${isActive("/recruiter") ? styles.active : ""}`} onClick={() => handleFileClick('resume.pdf', '/recruiter', 'resume.pdf')}>
-                    <Image src={extensions} alt="Recruiter" width={24} height={24} className={styles.icon} />
+                <Link href="/recruiter" aria-label="Recruiter Info" className={`${styles.iconContainer} ${isActive("/recruiter") ? styles.active : ""}`} onClick={() => handleFileClick('resume.pdf', '/recruiter', 'resume.pdf')} aria-current={isActive("/recruiter") ? "page" : undefined}>
+                    <Image src={extensions} alt="" width={24} height={24} className={styles.icon} aria-hidden="true" />
                 </Link>
-                <Link href="/about" className={`${styles.iconContainer} ${isActive("/about") ? styles.active : ""}`} onClick={() => handleFileClick('about.html', '/about', 'about.html')}>
-                    <Image src={pen} alt="About" width={24} height={24} className={styles.icon} />
+                <Link href="/about" aria-label="About Me" className={`${styles.iconContainer} ${isActive("/about") ? styles.active : ""}`} onClick={() => handleFileClick('about.html', '/about', 'about.html')} aria-current={isActive("/about") ? "page" : undefined}>
+                    <Image src={pen} alt="" width={24} height={24} className={styles.icon} aria-hidden="true" />
                 </Link>
-                <Link href="/contact" className={`${styles.iconContainer} ${isActive("/contact") ? styles.active : ""}`} onClick={() => handleFileClick('contact.css', '/contact', 'contact.css')}>
-                    <Image src={email} alt="Contact" width={24} height={24} className={styles.icon} />
+                <Link href="/contact" aria-label="Contact Me" className={`${styles.iconContainer} ${isActive("/contact") ? styles.active : ""}`} onClick={() => handleFileClick('contact.css', '/contact', 'contact.css')} aria-current={isActive("/contact") ? "page" : undefined}>
+                    <Image src={email} alt="" width={24} height={24} className={styles.icon} aria-hidden="true" />
                 </Link>
-                <Link href="/hire" className={`${styles.iconContainer} ${isActive("/hire") ? styles.active : ""}`} onClick={() => handleFileClick('hire.txt', '/hire', 'hire.txt')}>
-                    <Image src={briefcase} alt="Hire Me" width={24} height={24} className={styles.icon} />
+                <Link href="/hire" aria-label="Hire Me" className={`${styles.iconContainer} ${isActive("/hire") ? styles.active : ""}`} onClick={() => handleFileClick('hire.txt', '/hire', 'hire.txt')} aria-current={isActive("/hire") ? "page" : undefined}>
+                    <Image src={briefcase} alt="" width={24} height={24} className={styles.icon} aria-hidden="true" />
                 </Link>
             </div>
 
             <div className={styles.bottomIcons}>
-                <div className={styles.iconContainer}>
-                    <Image src={user} alt="Accounts" width={24} height={24} className={styles.icon} />
+                <div className={styles.iconContainer} aria-label="Accounts">
+                    <Image src={user} alt="" width={24} height={24} className={styles.icon} aria-hidden="true" />
                 </div>
-                <Link href="/settings" className={`${styles.iconContainer} ${isActive("/settings") ? styles.active : ""}`}>
+                <Link href="/settings" aria-label="Settings" className={`${styles.iconContainer} ${isActive("/settings") ? styles.active : ""}`} aria-current={isActive("/settings") ? "page" : undefined}>
                     <Image
                         className={styles.icon}
                         src={setting}
-                        alt="Settings"
+                        alt=""
                         width={24} height={24}
+                        aria-hidden="true"
                     />
                 </Link>
             </div>

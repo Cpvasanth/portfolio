@@ -96,3 +96,26 @@
     color: #6a9955;
     margin-bottom: 1rem;
 }
+
+.benefits {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background-color: #252526;
+    border: 1px solid #3c3c3c;
+}
+
+.benefitItem {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #dcdcaa;
+    /* VS Code Function color */
+    font-size: 0.9rem;
+}
+
+.checkmark {
+    color: #6a9955;
+}

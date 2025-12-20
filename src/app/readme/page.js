@@ -2,6 +2,11 @@ import React from 'react';
 import styles from '../../styles/readme.module.css';
 import EditorLayout from '../../components/Layout/EditorLayout';
 
+export const metadata = {
+    title: "Portfolio Documentation | Vasanthakumar C",
+    description: "Documentation for the VS Code Portfolio. Features, Tech Stack, and Usage Guide. A unique interactive experience.",
+};
+
 const Readme = () => {
     return (
         <EditorLayout>
@@ -70,6 +75,12 @@ const Readme = () => {
                     <li><code>Ctrl + `</code> : Toggle Terminal</li>
                     <li><code>Ctrl + B</code> : Toggle Sidebar</li>
                     <li><code>F1</code> : Open Command Palette</li>
+                </ul>
+                <h2>Share & Connect</h2>
+                <ul>
+                    <li>If you enjoyed this portfolio, please share it with your network!</li>
+                    <li>Star the repository on <a href="https://github.com/Start_the_reactor" target="_blank" rel="noopener noreferrer">GitHub</a>.</li>
+                    <li>Connect with me on <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer">LinkedIn</a>.</li>
                 </ul>
             </div>
         </EditorLayout>

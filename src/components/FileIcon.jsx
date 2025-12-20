@@ -1,5 +1,5 @@
 import React from 'react';
-import { SiHtml5, SiCss3, SiJavascript, SiReact, SiJson, SiSolidity } from 'react-icons/si';
+import { SiHtml5, SiCss3, SiJavascript, SiReact, SiJson, SiSolidity, SiPython, SiTypescript } from 'react-icons/si';
 import { VscJson, VscMarkdown, VscFilePdf, VscCode } from 'react-icons/vsc';
 
 const FileIcon = ({ name, size = 16 }) => {
@@ -25,6 +25,10 @@ const FileIcon = ({ name, size = 16 }) => {
             return <VscFilePdf size={size} color="#FF0000" />;
         case 'txt':
             return <VscCode size={size} color="#cccccc" />;
+        case 'py':
+            return <SiPython size={size} color="#3776AB" />;
+        case 'ts':
+            return <SiTypescript size={size} color="#3178C6" />;
         default:
             return (
                 <svg width={size} height={size} viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
