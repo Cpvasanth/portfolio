@@ -1,7 +1,7 @@
 .statusBar {
     height: 22px;
     background-color: var(--vscode-status-bar-bg);
-    color: white;
+    color: var(--vscode-status-bar-fg);
     display: flex;
     justify-content: space-between;
     align-items: center;

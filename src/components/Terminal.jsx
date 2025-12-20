@@ -203,7 +203,10 @@ export default function Terminal() {
     return (
         <div
             className={`${styles.terminal} ${isTerminalOpen ? styles.open : ''}`}
-            style={{ height: isTerminalOpen ? `${height}px` : '0px' }}
+            style={{
+                height: isTerminalOpen ? `${height}px` : '0px',
+                visibility: isTerminalOpen ? 'visible' : 'hidden'
+            }}
         >
             <div className={styles.resizeHandle} onMouseDown={startResizing} />
             <div className={styles.tabs}>
@@ -272,6 +275,7 @@ export default function Terminal() {
                                     className={styles.input}
                                     spellCheck="false"
                                     autoComplete="off"
+                                    aria-label="Terminal input"
                                 />
                             </div>
                         )}

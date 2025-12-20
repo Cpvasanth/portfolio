@@ -100,6 +100,7 @@ export default function CommandPalette() {
                         value={search}
                         onChange={e => { setSearch(e.target.value); setActiveIndex(0); }}
                         onKeyDown={onKeyDown}
+                        aria-label="Command palette input"
                     />
                 </div>
                 <div className={styles.list}>

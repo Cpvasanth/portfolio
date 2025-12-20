@@ -16,6 +16,7 @@ const Settings = () => {
                         type="text"
                         placeholder="Search settings"
                         className={styles.searchBar}
+                        aria-label="Search settings"
                     />
                 </div>
 
@@ -23,9 +24,10 @@ const Settings = () => {
                     <h2 className={styles.sectionTitle}>Commonly Used</h2>
 
                     <div className={styles.settingItem}>
-                        <label className={styles.settingLabel}>Workbench: Color Theme</label>
+                        <label htmlFor="color-theme" className={styles.settingLabel}>Workbench: Color Theme</label>
                         <p className={styles.settingDescription}>Specifies the color theme used in the workbench.</p>
                         <select
+                            id="color-theme"
                             value={theme}
                             onChange={(e) => setTheme(e.target.value)}
                             className={styles.select}
@@ -42,10 +44,11 @@ const Settings = () => {
                     </div>
 
                     <div className={styles.settingItem}>
-                        <label className={styles.settingLabel}>Editor: Font Size</label>
+                        <label htmlFor="font-size" className={styles.settingLabel}>Editor: Font Size</label>
                         <p className={styles.settingDescription}>Controls the font size in pixels.</p>
                         <div style={{ display: 'flex', alignItems: 'center' }}>
                             <input
+                                id="font-size"
                                 type="range"
                                 min="10"
                                 max="24"
@@ -61,9 +64,10 @@ const Settings = () => {
                 <div className={styles.section}>
                     <h2 className={styles.sectionTitle}>Text Editor</h2>
                     <div className={styles.settingItem}>
-                        <label className={styles.settingLabel}>Editor: Word Wrap</label>
+                        <label htmlFor="word-wrap" className={styles.settingLabel}>Editor: Word Wrap</label>
                         <p className={styles.settingDescription}>Controls how lines should wrap.</p>
                         <select
+                            id="word-wrap"
                             className={styles.select}
                             value={wordWrap}
                             onChange={(e) => setWordWrap(e.target.value)}
@@ -76,9 +80,10 @@ const Settings = () => {
                     </div>
 
                     <div className={styles.settingItem}>
-                        <label className={styles.settingLabel}>Editor: Minimap</label>
+                        <label htmlFor="minimap" className={styles.settingLabel}>Editor: Minimap</label>
                         <p className={styles.settingDescription}>Controls whether the minimap is shown.</p>
                         <select
+                            id="minimap"
                             className={styles.select}
                             value={minimap}
                             onChange={(e) => setMinimap(e.target.value)}

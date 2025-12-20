@@ -4,6 +4,7 @@
   --vscode-activity-bar-bg: #333333;
   --vscode-title-bar-bg: #3c3c3c;
   --vscode-status-bar-bg: #007acc;
+  --vscode-status-bar-fg: #ffffff;
   --vscode-tab-active-bg: #1e1e1e;
   --vscode-tab-inactive-bg: #2d2d2d;
   --vscode-editor-bg: #1e1e1e;
@@ -54,6 +55,7 @@
   --vscode-activity-bar-bg: #2c2c2c;
   --vscode-title-bar-bg: #dddddd;
   --vscode-status-bar-bg: #007acc;
+  --vscode-status-bar-fg: #ffffff;
   --vscode-tab-active-bg: #ffffff;
   --vscode-tab-inactive-bg: #ececec;
   --vscode-editor-bg: #ffffff;
@@ -87,6 +89,7 @@
   --vscode-activity-bar-bg: #000000;
   --vscode-title-bar-bg: #000000;
   --vscode-status-bar-bg: #000000;
+  --vscode-status-bar-fg: #ffffff;
   --vscode-tab-active-bg: #000000;
   --vscode-tab-inactive-bg: #000000;
   --vscode-editor-bg: #000000;
@@ -120,6 +123,7 @@
   --vscode-activity-bar-bg: #001122;
   --vscode-title-bar-bg: #001122;
   --vscode-status-bar-bg: #007acc;
+  --vscode-status-bar-fg: #ffffff;
   --vscode-tab-active-bg: #002240;
   --vscode-tab-inactive-bg: #001b33;
   --vscode-editor-bg: #002240;
@@ -153,6 +157,7 @@
   --vscode-activity-bar-bg: #171814;
   --vscode-title-bar-bg: #1e1f1c;
   --vscode-status-bar-bg: #414339;
+  --vscode-status-bar-fg: #ffffff;
   --vscode-tab-active-bg: #272822;
   --vscode-tab-inactive-bg: #1e1f1c;
   --vscode-editor-bg: #272822;
@@ -186,6 +191,7 @@
   --vscode-activity-bar-bg: #0d1117;
   --vscode-title-bar-bg: #010409;
   --vscode-status-bar-bg: #0d1117;
+  --vscode-status-bar-fg: #ffffff;
   --vscode-tab-active-bg: #0d1117;
   --vscode-tab-inactive-bg: #010409;
   --vscode-editor-bg: #0d1117;
@@ -219,6 +225,7 @@
   --vscode-activity-bar-bg: #eee8d5;
   --vscode-title-bar-bg: #eee8d5;
   --vscode-status-bar-bg: #eee8d5;
+  --vscode-status-bar-fg: #657b83;
   --vscode-tab-active-bg: #fdf6e3;
   --vscode-tab-inactive-bg: #d3cbb7;
   --vscode-editor-bg: #fdf6e3;
@@ -252,6 +259,7 @@
   --vscode-activity-bar-bg: #21222c;
   --vscode-title-bar-bg: #21222c;
   --vscode-status-bar-bg: #191a21;
+  --vscode-status-bar-fg: #f8f8f2;
   --vscode-tab-active-bg: #282a36;
   --vscode-tab-inactive-bg: #21222c;
   --vscode-editor-bg: #282a36;
@@ -284,7 +292,9 @@
   --vscode-sidebar-bg: #f0f4f8;
   --vscode-activity-bar-bg: #2c3e50;
   --vscode-title-bar-bg: #34495e;
-  --vscode-status-bar-bg: #2980b9;
+  --vscode-status-bar-bg: #1f618d;
+  /* Darker blue for better contrast with white text */
+  --vscode-status-bar-fg: #ffffff;
   --vscode-tab-active-bg: #ffffff;
   --vscode-tab-inactive-bg: #e0e6ed;
   --vscode-editor-bg: #ffffff;
