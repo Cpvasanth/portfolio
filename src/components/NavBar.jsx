@@ -4,74 +4,61 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import styles from "../styles/navBar.module.css";
 import FileIcon from "./FileIcon";
+import { useLayout } from "../context/LayoutContext";
+import { useRouter } from "next/navigation";
 
 
 export default function NavBar() {
     const pathname = usePathname();
+    const router = useRouter();
+    const { openTabs, closeTab } = useLayout();
 
     const isActive = (path) => {
         if (path === "/" && pathname === "/") return true;
-        if (path !== "/" && pathname.startsWith(path)) return true;
+        if (path !== "/" && pathname === path) return true;
         return false;
+    };
+
+    const handleClose = (e, path) => {
+        e.preventDefault();
+        e.stopPropagation();
+
+        closeTab(path);
+
+        if (isActive(path)) {
+            const index = openTabs.findIndex(tab => tab.path === path);
+            if (openTabs.length > 1) {
+                const nextTab = openTabs[index === 0 ? 1 : index - 1];
+                router.push(nextTab.path);
+            } else {
+                router.push("/");
+            }
+        }
     };
 
     return (
         <>
             <nav className={styles.tabs}>
-                <Link
-                    href="/"
-                    className={`${styles.tab} ${isActive("/") ? styles.active : ""}`}
-                >
-                    <FileIcon name="home.jsx" size={18} />
-                    <span className={styles.label}>home.jsx</span>
-                    <span className={styles.close}>×</span>
-                </Link>
-                <Link
-                    href="/about"
-                    className={`${styles.tab} ${isActive("/about") ? styles.active : ""}`}
-                >
-                    <FileIcon name="about.html" size={18} />
-                    <span className={styles.label}>about.html</span>
-                    <span className={styles.close}>×</span>
-                </Link>
-                <Link
-                    href="/contact"
-                    className={`${styles.tab} ${isActive("/contact") ? styles.active : ""}`}
-                >
-                    <FileIcon name="contact.css" size={18} />
-                    <span className={styles.label}>contact.css</span>
-                    <span className={styles.close}>×</span>
-                </Link>
-                <Link
-                    href="/project"
-                    className={`${styles.tab} ${isActive("/project") ? styles.active : ""}`}
-                >
-                    <FileIcon name="project.js" size={18} />
-                    <span className={styles.label}>project.js</span>
-                    <span className={styles.close}>×</span>
-                </Link>
-                <Link
-                    href="/github"
-                    className={`${styles.tab} ${isActive("/github") ? styles.active : ""}`}
-                >
-                    <FileIcon name="github.json" size={18} />
-                    <span className={styles.label}>github.json</span>
-                    <span className={styles.close}>×</span>
-                </Link>
-                <Link
-                    href="/readme"
-                    className={`${styles.tab} ${isActive("/readme") ? styles.active : ""}`}
-                >
-                    <FileIcon name="readme.md" size={18} />
-                    <span className={styles.label}>readme.md</span>
-                    <span className={styles.close}>×</span>
-                </Link>
+                {openTabs.map((tab) => (
+                    <Link
+                        key={tab.path}
+                        href={tab.path}
+                        className={`${styles.tab} ${isActive(tab.path) ? styles.active : ""}`}
+                    >
+                        <FileIcon name={tab.icon} size={18} />
+                        <span className={styles.label}>{tab.name}</span>
+                        <span
+                            className={styles.close}
+                            onClick={(e) => handleClose(e, tab.path)}
+                        >×</span>
+                    </Link>
+                ))}
             </nav>
             <div className={styles.breadcrumbs}>
                 <span className={styles.breadcrumbItem}>src</span>
                 <span className={styles.breadcrumbSeparator}>›</span>
                 <span className={styles.breadcrumbItem}>
-                    {pathname === "/" ? "home.jsx" : pathname.slice(1) + (pathname === "/about" ? ".html" : pathname === "/contact" ? ".css" : pathname === "/project" ? ".js" : pathname === "/github" ? ".json" : pathname === "/readme" ? ".md" : "")}
+                    {pathname === "/" ? "home.jsx" : (pathname.slice(1).replace(/\//g, ' › ')) + (pathname === "/about" ? ".html" : pathname === "/contact" ? ".css" : pathname === "/project" ? ".js" : pathname === "/github" ? ".json" : pathname === "/readme" ? ".md" : pathname === "/blockchain" ? ".sol" : pathname === "/blockchain/projects" ? ".sol" : "")}
                 </span>
             </div>
         </>

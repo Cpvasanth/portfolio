@@ -10,6 +10,8 @@ import { SettingsProvider } from "../context/SettingsContext";
 import { LayoutProvider } from "../context/LayoutContext";
 import RecruiterPanel from "../components/RecruiterPanel";
 import Terminal from "../components/Terminal";
+import MobileWarning from "../components/MobileWarning";
+import CommandPalette from "../components/CommandPalette";
 
 export const metadata = {
     title: "Vasanthakumar C - VS Code Portfolio",
@@ -22,6 +24,8 @@ export default function RootLayout({ children }) {
             <body>
                 <SettingsProvider>
                     <LayoutProvider>
+                        <CommandPalette />
+                        <MobileWarning />
                         <div className={styles.layout}>
                             <TitleBar />
                             <RecruiterPanel />

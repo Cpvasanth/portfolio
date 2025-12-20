@@ -37,6 +37,11 @@ export default function RecruiterPage() {
             <section className={styles.section}>
                 <h3>Projects</h3>
                 <div className={styles.project}>
+                    <h4>Fashion E-commerce Web Application</h4>
+                    <p>A modern e-commerce platform for fashion products with secure online payments and a smooth shopping experience.</p>
+                    <p><em>Tech Stack: Next.js, Stripe, Firebase</em></p>
+                </div>
+                <div className={styles.project}>
                     <h4>Rentopia</h4>
                     <p>A modern house renting app connecting renters with verified landlords.</p>
                     <p><em>Tech Stack: Next.js, React, TailwindCSS, TypeScript</em></p>

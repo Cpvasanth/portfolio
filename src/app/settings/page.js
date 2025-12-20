@@ -5,7 +5,7 @@ import EditorLayout from '../../components/Layout/EditorLayout';
 import { useSettings } from '../../context/SettingsContext';
 
 const Settings = () => {
-    const { theme, setTheme, fontSize, setFontSize, wordWrap, setWordWrap } = useSettings();
+    const { theme, setTheme, fontSize, setFontSize, wordWrap, setWordWrap, minimap, setMinimap } = useSettings();
 
     return (
         <EditorLayout>
@@ -72,6 +72,19 @@ const Settings = () => {
                             <option value="on">on</option>
                             <option value="wordWrapColumn">wordWrapColumn</option>
                             <option value="bounded">bounded</option>
+                        </select>
+                    </div>
+
+                    <div className={styles.settingItem}>
+                        <label className={styles.settingLabel}>Editor: Minimap</label>
+                        <p className={styles.settingDescription}>Controls whether the minimap is shown.</p>
+                        <select
+                            className={styles.select}
+                            value={minimap}
+                            onChange={(e) => setMinimap(e.target.value)}
+                        >
+                            <option value="off">off</option>
+                            <option value="on">on</option>
                         </select>
                     </div>
                 </div>

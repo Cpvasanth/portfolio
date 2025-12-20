@@ -3,7 +3,7 @@
     width: 100%;
     height: 100%;
     font-family: Consolas, 'Courier New', monospace;
-    font-size: 14px;
+    font-size: var(--editor-font-size, 14px);
     line-height: 1.5;
 }
 
@@ -14,16 +14,47 @@
     color: #858585;
     user-select: none;
     border-right: 1px solid var(--vscode-tab-inactive-bg);
-    /* Subtle separator */
 }
 
 .lineNumber {
-    height: 21px;
-    /* Match line-height of content */
+    height: calc(var(--editor-font-size, 14px) * 1.5);
+    /* Dynamic height to match line-height */
 }
 
 .content {
     flex: 1;
     padding-left: 15px;
     color: var(--vscode-text);
+    overflow-y: auto;
+}
+
+.splitLayout {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.paneLeft {
+    width: 50%;
+    height: 100%;
+    border-right: 1px solid var(--vscode-border);
+    overflow: hidden;
+}
+
+.paneRight {
+    width: 50%;
+    height: 100%;
+    background-color: var(--vscode-editor-bg);
+}
+
+@media (max-width: 768px) {
+    .splitLayout {
+        flex-direction: column;
+    }
+
+    .paneLeft,
+    .paneRight {
+        width: 100%;
+        height: 50%;
+    }
 }

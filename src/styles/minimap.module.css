@@ -1,0 +1,53 @@
+.minimapWrapper {
+    width: 60px;
+    height: 100%;
+    background-color: var(--vscode-editor-bg);
+    border-left: 1px solid var(--vscode-border);
+    position: relative;
+    overflow: hidden;
+    user-select: none;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.minimapContent {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 600px;
+    /* Width before scaling (e.g., 60px / 0.1) */
+    transform: scale(0.1);
+    transform-origin: top left;
+    color: var(--vscode-text);
+    opacity: 0.6;
+    line-height: inherit;
+    font-family: inherit;
+}
+
+/* Hide interactive elements in minimap if possible */
+.minimapContent a,
+.minimapContent button {
+    pointer-events: none;
+    text-decoration: none;
+}
+
+.viewport {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    pointer-events: auto;
+    cursor: grab;
+}
+
+.viewport:active {
+    cursor: grabbing;
+}
+
+@media (max-width: 768px) {
+    .minimapWrapper {
+        display: none;
+    }
+}

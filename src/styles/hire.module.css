@@ -1,0 +1,98 @@
+.container {
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    color: #cccccc;
+    font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+}
+
+.title {
+    color: #cccccc;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    font-weight: normal;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.formGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.label {
+    color: #9cdcfe;
+    font-size: 1rem;
+}
+
+.input,
+.textarea,
+.select {
+    background-color: #3c3c3c;
+    border: 1px solid #3c3c3c;
+    color: #cccccc;
+    padding: 0.8rem;
+    font-family: inherit;
+    font-size: 1rem;
+    outline: none;
+    transition: box-shadow 0.2s, border-color 0.2s;
+}
+
+.input:focus,
+.textarea:focus,
+.select:focus {
+    border-color: #007acc;
+    box-shadow: 0 0 0 2px rgba(0, 122, 204, 0.2);
+}
+
+.textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.button {
+    background-color: #0e639c;
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    font-family: inherit;
+    cursor: pointer;
+    align-self: flex-start;
+    transition: background-color 0.2s;
+}
+
+.button:hover {
+    background-color: #1177bb;
+}
+
+.button:disabled {
+    background-color: #4d4d4d;
+    cursor: not-allowed;
+}
+
+.success {
+    color: #6a9955;
+    margin-top: 1rem;
+    padding: 1rem;
+    background-color: rgba(106, 153, 85, 0.1);
+    border-left: 4px solid #6a9955;
+}
+
+.error {
+    color: #f48771;
+    margin-top: 1rem;
+    padding: 1rem;
+    background-color: rgba(244, 135, 113, 0.1);
+    border-left: 4px solid #f48771;
+}
+
+.comment {
+    color: #6a9955;
+    margin-bottom: 1rem;
+}

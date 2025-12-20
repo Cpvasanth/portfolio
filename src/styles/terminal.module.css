@@ -18,6 +18,21 @@
     transform: translateY(0);
 }
 
+.resizeHandle {
+    height: 4px;
+    background: transparent;
+    cursor: ns-resize;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+}
+
+.resizeHandle:hover {
+    background: var(--vscode-accent);
+}
+
 .tabs {
     display: flex;
     padding: 0 10px;
@@ -63,7 +78,7 @@
     overflow-y: auto;
     background-color: var(--vscode-editor-bg);
     color: var(--vscode-text);
-    font-size: 13px;
+    font-size: var(--editor-font-size, 13px);
 }
 
 .commandLine {

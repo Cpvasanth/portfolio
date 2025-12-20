@@ -104,3 +104,24 @@
 .secondaryBtn:hover {
     background-color: #f9f9f9;
 }
+
+@media (max-width: 768px) {
+    .panel {
+        padding: 15px 20px;
+    }
+
+    .content {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .actions {
+        flex-direction: column;
+    }
+
+    .primaryBtn,
+    .secondaryBtn {
+        width: 100%;
+        text-align: center;
+    }
+}

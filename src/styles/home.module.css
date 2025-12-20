@@ -35,7 +35,8 @@
 /* Button Group Styles */
 .buttons {
     display: flex;
-    gap: 1em; /* Creates space between buttons */
+    gap: 1em;
+    /* Creates space between buttons */
 }
 
 /* Button Styles */
@@ -45,15 +46,19 @@
     padding: 1em 2.6em;
     color: #d4d4d4;
     background-color: #f9826c;
-    border-radius: 5px; /* Adds rounded corners */
-    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth hover effects */
+    border-radius: 5px;
+    /* Adds rounded corners */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    /* Smooth hover effects */
 }
 
 /* Hover Effects for Buttons */
 .worksBtn:hover,
 .contactBtn:hover {
-    background-color: #d4604e; /* Darker shade on hover */
-    transform: scale(1.05); /* Slight zoom effect */
+    background-color: #d4604e;
+    /* Darker shade on hover */
+    transform: scale(1.05);
+    /* Slight zoom effect */
 }
 
 /* Responsive Design */
@@ -61,7 +66,8 @@
     .container {
         justify-content: flex-start;
         align-items: center;
-        margin-left: 0; /* Center-aligns content on smaller screens */
+        margin-left: 0;
+        /* Center-aligns content on smaller screens */
     }
 
     .name {
@@ -73,8 +79,16 @@
         font-size: 0.8em;
     }
 
+    .buttons {
+        flex-direction: column;
+        gap: 10px;
+        width: 90%;
+    }
+
     .worksBtn,
     .contactBtn {
-        padding: 0.5em 1em;
+        padding: 0.8em 1em;
+        width: 100%;
+        text-align: center;
     }
 }

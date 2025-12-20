@@ -2,6 +2,8 @@
     padding: 20px 40px;
     color: var(--vscode-text);
     font-family: 'Segoe UI', sans-serif;
+    font-size: calc(var(--editor-font-size, 14px) * 1.07);
+    /* Slightly larger than raw editor size for readability */
     line-height: 1.6;
     max-width: 800px;
 }

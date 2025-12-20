@@ -58,6 +58,11 @@ export default function Home() {
                     <span className={styles.tag}>&lt;/Link&gt;</span>
                 </div>
                 <div className={styles.line}>
+                    <span className={styles.indent3}>&nbsp;&nbsp;&lt;<span className={styles.tag}>Link</span> <span className={styles.attrName}>href</span>=<span className={styles.string}>"/hire"</span>&gt;</span>
+                    <Link href="/hire" className={styles.button}>Hire Me</Link>
+                    <span className={styles.tag}>&lt;/Link&gt;</span>
+                </div>
+                <div className={styles.line}>
                     <span className={styles.indent3}>&lt;/<span className={styles.tag}>div</span>&gt;</span>
                 </div>
                 <div className={styles.line}>
