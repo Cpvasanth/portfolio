@@ -151,7 +151,7 @@ export default function Explore() {
                     </div>
                 )}
             </div>
-            <div className={styles.section}>
+            {/* <div className={styles.section}>
                 <button
                     className={styles.sectionHeader}
                     onClick={() => setLocationsToggle(!locationsToggle)}
@@ -190,7 +190,7 @@ export default function Explore() {
                         </Link>
                     </div>
                 )}
-            </div>
+            </div> */}
             <div className={styles.section}>
                 <button
                     className={styles.sectionHeader}
