@@ -3,6 +3,33 @@
     background-color: var(--vscode-tab-inactive-bg);
     height: 35px;
     overflow-x: auto;
+    align-items: center;
+    /* Ensure vertical center */
+}
+
+/* Hide scrollbar for cleaner look */
+.tabs::-webkit-scrollbar {
+    display: none;
+}
+
+.mobileMenuBtn {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--vscode-text);
+    padding: 0 10px;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    min-width: 40px;
+    /* Target size */
+}
+
+@media (max-width: 768px) {
+    .mobileMenuBtn {
+        display: flex;
+    }
 }
 
 .tab {

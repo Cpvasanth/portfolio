@@ -8,10 +8,12 @@ import { useLayout } from "../context/LayoutContext";
 import { useRouter } from "next/navigation";
 
 
+import { VscMenu } from 'react-icons/vsc';
+
 export default function NavBar() {
     const pathname = usePathname();
     const router = useRouter();
-    const { openTabs, closeTab } = useLayout();
+    const { openTabs, closeTab, toggleMobileMenu } = useLayout();
 
     const isActive = (path) => {
         if (path === "/" && pathname === "/") return true;
@@ -39,6 +41,13 @@ export default function NavBar() {
     return (
         <>
             <nav className={styles.tabs}>
+                <button
+                    className={styles.mobileMenuBtn}
+                    onClick={toggleMobileMenu}
+                    aria-label="Toggle Menu"
+                >
+                    <VscMenu size={18} />
+                </button>
                 {openTabs.map((tab) => (
                     <Link
                         key={tab.path}

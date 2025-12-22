@@ -8,20 +8,22 @@ const MobileWarning = () => {
 
     useEffect(() => {
         const checkMobile = () => {
-            if (window.innerWidth <= 768) {
+            // Check session storage to see if user already dismissed it
+            const dismissed = sessionStorage.getItem('mobile-warning-dismissed');
+            if (!dismissed && window.innerWidth <= 768) {
                 setIsVisible(true);
-                const timer = setTimeout(() => {
-                    setIsVisible(false);
-                }, 10000); // 10 seconds
-                return () => clearTimeout(timer);
             }
         };
 
         checkMobile();
-        // Also re-check on resize in case browser tools are used to simulate mobile
         window.addEventListener('resize', checkMobile);
         return () => window.removeEventListener('resize', checkMobile);
     }, []);
+
+    const handleClose = () => {
+        setIsVisible(false);
+        sessionStorage.setItem('mobile-warning-dismissed', 'true');
+    };
 
     if (!isVisible) return null;
 
@@ -29,7 +31,7 @@ const MobileWarning = () => {
         <div className={styles.warningContainer}>
             <VscWarning className={styles.icon} />
             <p className={styles.text}>For the best experience, visit this site on a desktop.</p>
-            <button onClick={() => setIsVisible(false)} className={styles.closeButton}>
+            <button onClick={handleClose} className={styles.closeButton}>
                 <VscClose />
             </button>
         </div>

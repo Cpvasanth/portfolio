@@ -26,6 +26,7 @@ export const LayoutProvider = ({ children }) => {
     const [isFullscreen, setIsFullscreen] = useState(false);
     const [isSplitView, setIsSplitView] = useState(false);
     const [isCommandPaletteOpen, setIsCommandPaletteOpen] = useState(false);
+    const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const [openTabs, setOpenTabs] = useState([
         { name: 'home.jsx', path: '/', icon: 'home.jsx' },
     ]);
@@ -113,7 +114,10 @@ export const LayoutProvider = ({ children }) => {
             openTabs,
             openTab,
             openTabByPath,
-            closeTab
+            closeTab,
+            mobileMenuOpen,
+            toggleMobileMenu: () => setMobileMenuOpen(prev => !prev),
+            setMobileMenuOpen
         }}>
             {children}
         </LayoutContext.Provider>

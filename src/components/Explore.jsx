@@ -13,14 +13,17 @@ export default function Explore() {
     const [locationsToggle, setLocationsToggle] = React.useState(false);
     const [caseStudiesToggle, setCaseStudiesToggle] = React.useState(false);
     const pathname = usePathname();
-    const { openTab } = useLayout();
+    const { openTab, mobileMenuOpen, setMobileMenuOpen } = useLayout(); // Assume closeMobileMenu is simpler alias or use setMobileMenuOpen(false)
 
+    // Helper to close menu on mobile selection
+    // Helper to close menu on mobile selection
     const handleFileClick = (name, path, icon) => {
         openTab({ name, path, icon });
+        if (mobileMenuOpen) setMobileMenuOpen(false);
     };
 
     return (
-        <nav className={styles.sidebar} aria-label="File Explorer">
+        <nav className={`${styles.sidebar} ${mobileMenuOpen ? styles.mobileOpen : ''}`} aria-label="File Explorer">
             <div className={styles.sidebarTitle}>EXPLORER</div>
             <div className={styles.section}>
                 <button

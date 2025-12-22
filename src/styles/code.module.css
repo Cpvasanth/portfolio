@@ -116,6 +116,8 @@
     .codeContainer {
         padding: 10px;
         font-size: 13px;
+        overflow-x: auto;
+        /* Enable horizontal scroll for long lines */
     }
 
     .indent1 {
