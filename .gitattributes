@@ -1,2 +1,0 @@
-*.exe filter=lfs diff=lfs merge=lfs -text
-src/assets/NVIDIA_app_v11.0.1.184.exe filter=lfs diff=lfs merge=lfs -text
