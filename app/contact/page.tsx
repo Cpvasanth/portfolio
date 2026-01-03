@@ -1,9 +1,10 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaArrowRight, FaCheck, FaSpinner } from "react-icons/fa";
 import FAQ from "@/components/FAQ";
+import confetti from "canvas-confetti";
 
 export default function ContactPage() {
     const [step, setStep] = useState(1);
@@ -13,15 +14,51 @@ export default function ContactPage() {
         email: "",
         service: "Web Design",
         message: "",
+        country: "Unknown", // Default
     });
     const [isSubmitted, setIsSubmitted] = useState(false);
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [error, setError] = useState("");
 
+    // Fetch User Location on Mount
+    useEffect(() => {
+        const fetchLocation = async () => {
+            try {
+                const res = await fetch('https://ipapi.co/json/');
+                if (res.ok) {
+                    const data = await res.json();
+                    if (data.country_name) {
+                        setFormData(prev => ({ ...prev, country: data.country_name }));
+                    }
+                }
+            } catch (error) {
+                console.error("Failed to fetch location", error);
+            }
+        };
+        fetchLocation();
+    }, []);
+
+    const validateEmail = (email: string) => {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    };
+
     const handleNext = () => {
-        if (formData.name && formData.phone && formData.email) {
-            setStep(2);
+        if (!formData.name || !formData.phone || !formData.email) return;
+
+        if (!validateEmail(formData.email)) {
+            setError("Please enter a valid email address.");
+            return;
         }
+
+        setError(""); // Clear errors if valid
+        setStep(2);
+    };
+
+    const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const value = e.target.value;
+        // Allow only numbers
+        const numericValue = value.replace(/\D/g, '');
+        setFormData({ ...formData, phone: numericValue });
     };
 
     const handleSubmit = async (e: React.FormEvent) => {
@@ -40,6 +77,13 @@ export default function ContactPage() {
 
             if (response.ok) {
                 setIsSubmitted(true);
+                // Trigger confetti effect
+                confetti({
+                    particleCount: 150,
+                    spread: 70,
+                    origin: { y: 0.6 },
+                    colors: ['#ff7722', '#22c55e', '#3b82f6', '#f59e0b'] // Brand + Success colors
+                });
             } else {
                 const data = await response.json();
                 setError(data.error || "Something went wrong. Please try again.");
@@ -50,6 +94,8 @@ export default function ContactPage() {
             setIsSubmitting(false);
         }
     };
+
+    // ... render ... 
 
     return (
         <section className="flex min-h-screen w-full flex-col items-center justify-center px-4 md:px-10 lg:pl-32 py-20">
@@ -66,7 +112,7 @@ export default function ContactPage() {
                             #1
                         </span>
                         <span className="text-sm font-medium text-zinc-500">
-                            Break your technical barrier
+                            Top Rising Freelancer
                         </span>
                     </motion.div>
 
@@ -140,7 +186,10 @@ export default function ContactPage() {
                                                 placeholder="john@doe.com"
                                                 className="w-full rounded-xl border border-zinc-200 bg-zinc-50 px-4 py-3 outline-none transition-all focus:border-[#ff7722] focus:bg-white"
                                                 value={formData.email}
-                                                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                                                onChange={(e) => {
+                                                    setFormData({ ...formData, email: e.target.value });
+                                                    if (error) setError(""); // Clear error on type
+                                                }}
                                                 required
                                             />
                                         </div>
@@ -148,13 +197,20 @@ export default function ContactPage() {
                                             <label className="text-sm font-semibold text-zinc-600">Phone number *</label>
                                             <input
                                                 type="tel"
-                                                placeholder="+1 234 567 890"
+                                                placeholder="1234567890"
                                                 className="w-full rounded-xl border border-zinc-200 bg-zinc-50 px-4 py-3 outline-none transition-all focus:border-[#ff7722] focus:bg-white"
                                                 value={formData.phone}
-                                                onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                                                onChange={handlePhoneChange}
                                                 required
                                             />
                                         </div>
+
+                                        {/* Show error for validation here if step 1 */}
+                                        {step === 1 && error && (
+                                            <div className="text-red-500 text-sm font-medium">
+                                                {error}
+                                            </div>
+                                        )}
 
                                         <button
                                             type="button"
@@ -257,6 +313,6 @@ export default function ContactPage() {
             <div className="mt-20 w-full">
                 <FAQ />
             </div>
-        </section>
+        </section >
     );
 }

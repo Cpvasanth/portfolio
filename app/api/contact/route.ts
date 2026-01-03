@@ -10,7 +10,7 @@ function sanitizeInput(str: string) {
 export async function POST(request: Request) {
     try {
         const body = await request.json();
-        const { name, email, phone, service, message } = body;
+        const { name, email, phone, service, message, country } = body;
 
         // Simple Validation
         if (!name || !email || !phone || !message) {
@@ -27,6 +27,7 @@ export async function POST(request: Request) {
             phone: sanitizeInput(phone),
             service: sanitizeInput(service || 'Not specified'),
             message: sanitizeInput(message),
+            country: sanitizeInput(country || 'Unknown'),
         };
 
         // Configure Nodemailer Transporter
@@ -42,12 +43,13 @@ export async function POST(request: Request) {
         const mailOptions = {
             from: process.env.EMAIL_USER,
             to: process.env.EMAIL_USER, // Sending to yourself
-            subject: `New Contact Form Submission from ${sanitizedData.name}`,
+            subject: `New Contact Form from ${sanitizedData.name} (${sanitizedData.country})`,
             html: `
                 <h3>New Lead from Portfolio Website</h3>
                 <p><strong>Name:</strong> ${sanitizedData.name}</p>
                 <p><strong>Email:</strong> ${sanitizedData.email}</p>
                 <p><strong>Phone:</strong> ${sanitizedData.phone}</p>
+                <p><strong>Location:</strong> ${sanitizedData.country}</p>
                 <p><strong>Service Interest:</strong> ${sanitizedData.service}</p>
                 <br />
                 <p><strong>Message:</strong></p>

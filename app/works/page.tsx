@@ -95,7 +95,7 @@ export default function WorksPage() {
     }, [setScrollTheme]);
 
     return (
-        <main className="min-h-screen bg-black text-zinc-50 selection:bg-cyan-500 selection:text-black">
+        <main className="min-h-screen text-zinc-50 selection:bg-cyan-500 selection:text-black">
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

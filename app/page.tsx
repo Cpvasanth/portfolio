@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
-    <div className="relative min-h-screen bg-[#fbf9ef] font-sans selection:bg-black selection:text-white">
+    <div className="relative min-h-screen font-sans selection:bg-black selection:text-white">
 
 
       {/* Main Content */}
