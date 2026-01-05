@@ -81,6 +81,9 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: "https://imvasa.vercel.app"
+  },
+  verification: {
+    google: "Qs96EnDjxH-2OARb9brbTWkE-yMYNlYLcnkk-DrkLnk"
   }
 };
 
