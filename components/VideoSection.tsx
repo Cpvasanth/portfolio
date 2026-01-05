@@ -11,6 +11,8 @@ export default function VideoSection() {
                     muted
                     loop
                     playsInline
+                    preload="metadata"
+                    poster="/og-image.png"
                 >
                     <source src="/ad.mp4" type="video/mp4" />
                     Your browser does not support the video tag.
@@ -19,3 +21,4 @@ export default function VideoSection() {
         </section>
     );
 }
+

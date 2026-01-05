@@ -48,17 +48,28 @@ export default function AboutPage() {
             <div className="absolute top-0 right-0 -z-0 h-[500px] w-[500px] rounded-full bg-gradient-to-b from-[#ff7722]/10 to-transparent blur-3xl" />
             <div className="absolute bottom-0 left-0 -z-0 h-[500px] w-[500px] rounded-full bg-gradient-to-t from-purple-500/10 to-transparent blur-3xl opacity-50" />
 
-            {/* Header GIF */}
+            {/* Header Video (converted from GIF for 80-90% size reduction) */}
             <div className="relative mb-20 w-full max-w-7xl overflow-hidden rounded-[2rem] shadow-sm">
-                <Image
-                    src="/header.gif"
-                    alt="Header Animation"
-                    width={1200}
-                    height={300} // Aspect ratio guess, w-full handles fit
+                <video
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    preload="metadata"
                     className="h-full w-full object-cover"
-                    unoptimized
-                    priority
-                />
+                    aria-label="Vasa - Creative Developer Header Animation"
+                >
+                    <source src="/header.mp4" type="video/mp4" />
+                    {/* Fallback to GIF if MP4 not available */}
+                    <Image
+                        src="/header.gif"
+                        alt="Vasa - Creative Developer Header Animation"
+                        width={1200}
+                        height={300}
+                        className="h-full w-full object-cover"
+                        unoptimized
+                    />
+                </video>
             </div>
 
             {/* Profile Section */}
@@ -72,14 +83,25 @@ export default function AboutPage() {
                     className="relative lg:w-1/2"
                 >
                     <div className="relative aspect-square w-full max-w-xl mx-auto overflow-hidden rounded-[3rem] shadow-2xl border-[8px] border-white">
-                        <Image
-                            src="/profile.gif"
-                            alt="Profile Animation"
-                            fill
-                            className="object-cover"
-                            unoptimized
-                            priority
-                        />
+                        <video
+                            autoPlay
+                            loop
+                            muted
+                            playsInline
+                            preload="metadata"
+                            className="absolute inset-0 h-full w-full object-cover"
+                            aria-label="Vasa - Freelance Web Developer Profile"
+                        >
+                            <source src="/profile.mp4" type="video/mp4" />
+                            {/* Fallback to GIF if MP4 not available */}
+                            <Image
+                                src="/profile.gif"
+                                alt="Vasa - Freelance Web Developer Profile"
+                                fill
+                                className="object-cover"
+                                unoptimized
+                            />
+                        </video>
                         <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none" />
                     </div>
 
@@ -96,8 +118,8 @@ export default function AboutPage() {
                 <div className="flex flex-col gap-8 lg:w-1/2">
                     <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
                         <h1 className="text-5xl font-bold leading-tight tracking-tighter text-black sm:text-6xl md:text-7xl">
-                            More than just <br />
-                            <span className="text-zinc-400">pixels & code.</span>
+                            Freelance Web Developer<br />
+                            <span className="text-zinc-400">& Digital Marketing Expert</span>
                         </h1>
                     </motion.div>
 

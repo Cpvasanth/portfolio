@@ -48,15 +48,15 @@ export default function Hero() {
             <div className="flex flex-col items-center text-center space-y-6 md:space-y-8 z-0">
                 <Magnetic strength={0.3}>
                     <h1 className="text-2xl md:text-xl font-bold leading-tight tracking-tighter text-black sm:text-5xl md:text-7xl lg:text-8xl cursor-default">
-                        The Digital
-                        <span className="text-zinc-500"> Partner </span> for <br />
-                        Ambitious Brands
+                        Affordable Freelance
+                        <span className="text-zinc-500"> Web Developer </span>&<br />
+                        SEO Expert
                     </h1>
                 </Magnetic>
 
                 <p className="max-w-xl text-lg font-medium leading-relaxed text-zinc-600 md:text-2xl">
-                    Freelance Web Developer & Digital Marketer.
-                    Building high-performance websites and data-driven marketing strategies using the VASA approach.
+                    Your all-in-one digital partner for web development, SEO & digital marketing.
+                    Affordable rates. Premium results. 60-80% off for first-time clients.
                 </p>
 
                 <div className="flex flex-col gap-4 sm:flex-row">

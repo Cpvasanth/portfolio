@@ -113,10 +113,10 @@ function Socials() {
 function MainContent() {
     return (
         <div className="flex flex-col items-center justify-center gap-12 text-center pointer-events-none">
-            <h2 className="max-w-5xl text-5xl font-bold leading-tight tracking-tighter sm:text-6xl md:text-7xl lg:text-8xl">
+            <p className="max-w-5xl text-5xl font-bold leading-tight tracking-tighter sm:text-6xl md:text-7xl lg:text-8xl" aria-label="Call to action">
                 Where attention <br />
                 <span className="opacity-50">turns into action.</span>
-            </h2>
+            </p>
 
             <Link
                 href="/contact"

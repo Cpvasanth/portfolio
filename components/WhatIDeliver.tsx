@@ -60,8 +60,8 @@ export default function WhatIDeliver() {
         >
             <div className="mb-24 pt-20">
                 <h2 className="max-w-4xl text-5xl font-bold tracking-tighter sm:text-6xl md:text-7xl">
-                    What I deliver, <br />
-                    <span className="text-zinc-400">How projects move quickly</span>
+                    Freelance Services: <br />
+                    <span className="text-zinc-400">Web Development, SEO & Marketing</span>
                 </h2>
             </div>
 

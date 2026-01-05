@@ -123,8 +123,8 @@ export default function ContactPage() {
                         transition={{ delay: 0.1 }}
                         className="text-5xl font-bold leading-[0.9] tracking-tighter sm:text-6xl md:text-6xl lg:text-7xl"
                     >
-                        The right design partner for your <br />
-                        next project
+                        Hire an Affordable<br />
+                        Freelance Developer
                     </motion.h1>
 
                     <motion.p

@@ -14,7 +14,8 @@ const webProjects = [
         category: "Smart Contract Audit Portfolio",
         description: "A comprehensive portfolio for a smart contract auditing firm, showcasing their security expertise and services.",
         color: "bg-blue-600",
-        image: "https://placehold.co/800x600/1e3a8a/FFFFFF/png?text=Solea+Audit",
+        image: "/images/projects/solea-audit.png",
+        alt: "Solea Audit Academy - Smart Contract Auditing Website Design",
         tags: ["Web Dev", "Portfolio", "Crypto"],
         url: "https://www.solea.academy/"
     },
@@ -23,7 +24,8 @@ const webProjects = [
         category: "House Renting Web App",
         description: "A modern house renting platform featuring one-on-one chatting, secure owner verification, and an AI-powered chatbot assistant.",
         color: "bg-purple-600",
-        image: "https://placehold.co/800x600/581c87/FFFFFF/png?text=Rentopia",
+        image: "/images/projects/rentopia.png",
+        alt: "Rentopia - Modern House Renting Platform with AI Chatbot",
         tags: ["Web App", "Chatbot", "Real Estate"],
         url: "https://rentopia.synt-x.com/"
     },
@@ -32,7 +34,8 @@ const webProjects = [
         category: "E-commerce Experience",
         description: "A sleek fashion e-commerce platform with a custom CMS, integrated payment system, and modern UI design.",
         color: "bg-emerald-600",
-        image: "https://placehold.co/800x600/064e3b/FFFFFF/png?text=Fashion+Store",
+        image: "/images/projects/fashion-store.png",
+        alt: "Fashion Store - E-commerce Platform with Custom CMS",
         tags: ["E-commerce", "CMS", "Payment"],
         url: "https://fashion.synt-x.com/"
     }
@@ -109,7 +112,7 @@ export default function WorksPage() {
                     transition={{ duration: 0.6 }}
                     className="text-6xl md:text-8xl font-black tracking-tighter mb-8"
                 >
-                    Selected <span className="text-cyan-500 text-glow-cyan">Works</span>
+                    Web Development <span className="text-cyan-500 text-glow-cyan">Portfolio</span>
                 </motion.h1>
                 <motion.p
                     initial={{ opacity: 0, y: 20 }}
@@ -117,7 +120,7 @@ export default function WorksPage() {
                     transition={{ duration: 0.6, delay: 0.2 }}
                     className="text-xl md:text-2xl text-zinc-400 max-w-2xl leading-relaxed"
                 >
-                    A curated collection of digital experiences, SEO victories, and marketing campaigns.
+                    Freelancer portfolio showcasing web design, SEO case studies, and digital marketing results.
                 </motion.p>
             </section>
 
@@ -234,12 +237,14 @@ function ProjectCard({ project, index }: { project: any, index: number }) {
                         transition={{ duration: 0.5 }}
                         className="w-full h-full relative"
                     >
-                        {/* Placeholder for project image - functionality ready for next/image */}
-                        <div className={`w-full h-full ${project.color} flex items-center justify-center`}>
-                            <span className="text-4xl font-black text-white/20 uppercase tracking-widest px-8 text-center">
-                                {project.title}
-                            </span>
-                        </div>
+                        {/* Project Image */}
+                        <Image
+                            src={project.image}
+                            alt={project.alt || project.title}
+                            fill
+                            className="object-cover"
+                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        />
                     </motion.div>
 
                     {/* Floating Action Button */}

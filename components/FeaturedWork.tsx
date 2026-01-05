@@ -41,7 +41,7 @@ export default function FeaturedWork() {
         <section className="w-full px-4 py-20 md:px-10 lg:pl-32">
             <div className="mb-12 flex items-end justify-between">
                 <h2 className="text-4xl font-bold tracking-tighter sm:text-5xl">
-                    Featured <br /> work
+                    Featured Web Development<br />& SEO Projects
                 </h2>
                 <Link
                     href="/works"
