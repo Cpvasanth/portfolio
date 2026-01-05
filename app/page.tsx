@@ -1,5 +1,6 @@
 import Hero from "@/components/Hero";
 import FeaturedWork from "@/components/FeaturedWork";
+import VideoSection from "@/components/VideoSection";
 import WhatIDeliver from "@/components/WhatIDeliver";
 import Footer from "@/components/Footer";
 
@@ -12,6 +13,7 @@ export default function Home() {
       <main className="w-full">
         <Hero />
         <FeaturedWork />
+        <VideoSection />
         <WhatIDeliver />
         <Footer />
       </main>

@@ -2,7 +2,8 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { FaArrowRight, FaCheck, FaSpinner } from "react-icons/fa";
+import { FaArrowRight, FaCheck, FaSpinner, FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 import FAQ from "@/components/FAQ";
 import confetti from "canvas-confetti";
 
@@ -134,6 +135,25 @@ export default function ContactPage() {
                     >
                         We’re experts in mobile app design only for entrepreneurs. Over the years, we've crafted an offer tailored from concept to pixel-perfect mockups.
                     </motion.p>
+
+                    {/* Social Icons */}
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.3 }}
+                        className="flex gap-4 text-zinc-600"
+                    >
+                        <a href="https://github.com/cpvasanth" target="_blank" rel="noopener noreferrer" className="text-2xl hover:text-[#ff7722] transition-colors">
+                            <FaGithub />
+                        </a>
+                        <a href="https://linkedin.com/in/cpvasanth" target="_blank" rel="noopener noreferrer" className="text-2xl hover:text-[#ff7722] transition-colors">
+                            <FaLinkedin />
+                        </a>
+                        <a href="https://x.com/cpvasanth" target="_blank" rel="noopener noreferrer" className="text-2xl hover:text-[#ff7722] transition-colors">
+                            <FaXTwitter />
+                        </a>
+
+                    </motion.div>
                 </div>
 
                 {/* Right Side: Form Card */}

@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Montserrat } from "next/font/google";
 import "./globals.css";
 import Sidebar from "@/components/Sidebar";
 import MobileNav from "@/components/MobileNav";
 import RightSidebar from "@/components/RightSidebar";
 import { ScrollThemeProvider } from "@/components/ScrollThemeContext";
 import ScrollThemeWrapper from "@/components/ScrollThemeWrapper";
+import CustomCursor from "@/components/CustomCursor";
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -14,6 +16,11 @@ const geistSans = Geist({
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
+
+const montserrat = Montserrat({
+  variable: "--font-montserrat",
   subsets: ["latin"],
 });
 
@@ -30,8 +37,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${montserrat.variable} antialiased`}
       >
+        <CustomCursor />
         <ScrollThemeProvider>
           <ScrollThemeWrapper>
             {/* Left Sidebar (Desktop) */}
