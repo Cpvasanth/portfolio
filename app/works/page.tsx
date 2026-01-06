@@ -75,20 +75,6 @@ const faqs = [
     }
 ];
 
-// --- JSON-LD Structured Data Schema ---
-const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": faqs.map(faq => ({
-        "@type": "Question",
-        "name": faq.question,
-        "acceptedAnswer": {
-            "@type": "Answer",
-            "text": faq.answer
-        }
-    }))
-};
-
 export default function WorksPage() {
     const { setScrollTheme } = useScrollTheme();
 
@@ -99,10 +85,6 @@ export default function WorksPage() {
 
     return (
         <main className="min-h-screen text-zinc-50 selection:bg-cyan-500 selection:text-black">
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-            />
 
             {/* Header / Intro */}
             <section className="pt-32 pb-16 px-6 md:px-12 max-w-7xl mx-auto">

@@ -40,7 +40,26 @@ export const metadata: Metadata = {
     "contract freelancer",
     "affordable web design",
     "SEO services",
-    "creative developer"
+    "creative developer",
+    "AI engineer",
+    "vasa",
+    "imvasa",
+    "cpvasanth",
+    "cpvasanthk",
+    "cpvasanthkumar",
+    "best freelancer",
+    "best web developer",
+    "affordable freelancer",
+    "affordable web developer",
+    "affordable SEO expert",
+    "affordable digital marketing",
+    "affordable web development",
+    "affordable digital partner",
+    "affordable contract freelancer",
+    "affordable affordable web design",
+    "affordable SEO services",
+    "affordable creative developer",
+    "affordable AI engineer",
   ],
   authors: [{ name: "Vasa", url: "https://imvasa.vercel.app" }],
   creator: "Vasa",
@@ -114,7 +133,13 @@ const jsonLd = {
         "React",
         "Next.js",
         "Node.js",
-        "Tailwind CSS"
+        "Tailwind CSS",
+        "Express.js",
+        "Supabase",
+        "Stripe",
+        "Figma",
+        "firebase",
+        "AI engineering"
       ]
     },
     // ProfessionalService Schema - For Local/Service Results
@@ -133,7 +158,12 @@ const jsonLd = {
         { "@type": "Country", "name": "United Kingdom" },
         { "@type": "Country", "name": "Australia" },
         { "@type": "Country", "name": "Canada" },
-        { "@type": "Continent", "name": "Europe" }
+        { "@type": "Country", "name": "India" },
+        { "@type": "Continent", "name": "Europe" },
+        { "@type": "Continent", "name": "North America" },
+        { "@type": "Continent", "name": "Asia" },
+        { "@type": "Continent", "name": "Africa" },
+        { "@type": "Continent", "name": "South America" },
       ],
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
@@ -164,43 +194,7 @@ const jsonLd = {
             }
           }
         ]
-      },
-      // AggregateRating for star ratings in search results
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "5",
-        "bestRating": "5",
-        "worstRating": "1",
-        "ratingCount": "4",
-        "reviewCount": "4"
-      },
-      // Individual reviews for credibility
-      "review": [
-        {
-          "@type": "Review",
-          "author": { "@type": "Person", "name": "Sarah Jenkins" },
-          "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
-          "reviewBody": "Vasa transformed our vague idea into a stunning MVP in just 4 weeks. The site is incredibly fast and easy to manage."
-        },
-        {
-          "@type": "Review",
-          "author": { "@type": "Person", "name": "Mark D." },
-          "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
-          "reviewBody": "Our conversion rates doubled after the redesign. The ROI on this project has been incredible."
-        },
-        {
-          "@type": "Review",
-          "author": { "@type": "Person", "name": "Elena Rodriguez" },
-          "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
-          "reviewBody": "Technical expertise + Design eye = Dangerous combination. Our internal dev team was impressed by the handover."
-        },
-        {
-          "@type": "Review",
-          "author": { "@type": "Person", "name": "Alex Chen" },
-          "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
-          "reviewBody": "Fast, reliable, and incredibly creative interactions. The scroll animations make the app feel alive."
-        }
-      ]
+      }
     },
     // WebSite Schema - For Sitelinks
     {
