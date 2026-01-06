@@ -101,6 +101,14 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://imvasa.vercel.app"
   },
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/logo.png", type: "image/png" }
+    ],
+    apple: "/logo.png",
+    shortcut: "/logo.png"
+  },
   verification: {
     google: "Qs96EnDjxH-2OARb9brbTWkE-yMYNlYLcnkk-DrkLnk"
   }
@@ -117,7 +125,7 @@ const jsonLd = {
       "name": "Vasa",
       "alternateName": "Vasanth",
       "url": "https://imvasa.vercel.app",
-      "image": "https://imvasa.vercel.app/og-image.png",
+      "image": "https://imvasa.vercel.app/logo.png",
       "description": "Affordable freelance web developer, SEO expert, and digital marketing specialist offering premium services at competitive rates.",
       "jobTitle": "Freelance Web Developer & SEO Expert",
       "sameAs": [
@@ -148,8 +156,8 @@ const jsonLd = {
       "@id": "https://imvasa.vercel.app/#business",
       "name": "Vasa - Freelance Digital Partner",
       "url": "https://imvasa.vercel.app",
-      "logo": "https://imvasa.vercel.app/og-image.png",
-      "image": "https://imvasa.vercel.app/og-image.png",
+      "logo": "https://imvasa.vercel.app/logo.png",
+      "image": "https://imvasa.vercel.app/logo.png",
       "description": "Affordable freelance web development, SEO, and digital marketing services. 60-80% off for first-time clients.",
       "priceRange": "$$",
       "founder": { "@id": "https://imvasa.vercel.app/#person" },

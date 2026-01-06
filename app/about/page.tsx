@@ -117,9 +117,9 @@ export default function AboutPage() {
                 {/* Right: Content */}
                 <div className="flex flex-col gap-8 lg:w-1/2">
                     <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
-                        <h1 className="text-5xl font-bold leading-tight tracking-tighter text-black sm:text-6xl md:text-7xl">
+                        <h1 className="text-5xl font-bold leading-tight tracking-tighter text-black sm:text-6xl md:text-4xl">
                             Freelance Web Developer<br />
-                            <span className="text-zinc-400">& Digital Marketing Expert</span>
+                            <span className="text-zinc-400">& SEO Expert</span>
                         </h1>
                     </motion.div>
 

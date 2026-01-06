@@ -136,7 +136,7 @@ function WebDesignSection() {
             ref={containerRef}
             className="relative py-24 overflow-hidden bg-black text-white"
             onViewportEnter={() => setScrollTheme("works-web")}
-            viewport={{ amount: 0.3 }}
+            viewport={{ amount: 0.2 }}
         >
             {/* Abstract Background Illustration */}
             <div className="absolute inset-0 z-0 pointer-events-none opacity-20">
@@ -271,6 +271,13 @@ function SeoSection() {
     return (
         <motion.section
             onViewportEnter={() => setScrollTheme("works-seo")}
+            onViewportLeave={(info) => {
+                // Only switch back to web theme if leaving from top (scrolling up)
+                if (info && info.boundingClientRect && info.boundingClientRect.top > 0) {
+                    setScrollTheme("works-web");
+                }
+            }}
+            viewport={{ amount: 0.3 }}
             className="relative py-24 bg-[#202124] text-[#bdc1c6] overflow-hidden font-sans border-t border-white/5"
         >
             <div className="max-w-4xl mx-auto px-6 md:px-12">

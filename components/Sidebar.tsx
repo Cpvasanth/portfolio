@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { FaHome, FaBriefcase, FaUser, FaEnvelope } from "react-icons/fa";
 import { useScrollTheme } from "./ScrollThemeContext";
@@ -14,19 +15,24 @@ export default function Sidebar() {
     const isWorksMarketing = scrollTheme === "works-marketing";
     const isDark = scrollTheme === "footer-dark" || isWorksWeb || isWorksSeo || isWorksMarketing;
 
-    // Logo Color
-    let logoClass = "bg-black";
-    if (isWorksWeb) logoClass = "bg-cyan-500 shadow-[0_0_15px_rgba(6,182,212,0.5)]";
-    if (isWorksSeo) logoClass = "bg-[#fab450] shadow-[0_0_15px_rgba(250,180,80,0.5)]"; // Google Yellowish? Actually User wanted to match SEO section which is Blue links. Let's use Google "G" Blue.
-    if (isWorksSeo) logoClass = "bg-[#8ab4f8] shadow-[0_0_15px_rgba(138,180,248,0.5)] text-black";
-    if (isWorksMarketing) logoClass = "bg-gradient-to-tr from-purple-500 to-pink-500 shadow-[0_0_15px_rgba(236,72,153,0.5)]";
+    // Logo background color with glow effects
+    let logoClass = "";
+    if (isWorksWeb) logoClass = "shadow-[0_0_15px_rgba(6,182,212,0.5)]";
+    if (isWorksSeo) logoClass = "shadow-[0_0_15px_rgba(138,180,248,0.5)]";
+    if (isWorksMarketing) logoClass = "shadow-[0_0_15px_rgba(236,72,153,0.5)]";
 
     return (
         <nav className={`hidden md:flex flex-col items-center justify-between py-8 h-screen sticky top-0 transition-colors duration-500 bg-transparent ${isDark ? "text-white" : "text-zinc-500"}`}>
             {/* Logo */}
             <div className="flex flex-col items-center gap-1">
-                <div className={`flex h-10 w-10 items-center justify-center rounded-full text-white transition-colors duration-300 ${logoClass}`}>
-                    <span className="text-sm font-bold tracking-tighter">VA</span>
+                <div className={`flex h-10 w-10 items-center justify-center rounded-full overflow-hidden transition-all duration-300 ${logoClass}`}>
+                    <Image
+                        src="/logo.png"
+                        alt="Vasa Logo"
+                        width={80}
+                        height={80}
+                        className="object-cover w-full h-full"
+                    />
                 </div>
             </div>
 
