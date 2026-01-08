@@ -8,8 +8,13 @@ import { motion, useScroll, useSpring } from "framer-motion";
 
 export default function RightSidebar() {
     const { scrollTheme } = useScrollTheme();
-    // Removed pathname logic to rely strictly on scrollTheme
+    const pathname = usePathname();
 
+    // Hide on individual blog post pages
+    const isBlogPost = pathname?.startsWith("/blog/") && pathname.split("/").length > 2;
+    if (isBlogPost) return null;
+
+    // Theme logic
     const isWorksWeb = scrollTheme === "works-web";
     const isWorksSeo = scrollTheme === "works-seo";
     const isWorksMarketing = scrollTheme === "works-marketing";

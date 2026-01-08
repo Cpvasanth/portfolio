@@ -1,13 +1,9 @@
 import type { Metadata } from "next";
+import Script from "next/script";
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Geist, Geist_Mono, Montserrat } from "next/font/google";
 import "./globals.css";
-import Sidebar from "@/components/Sidebar";
-import MobileNav from "@/components/MobileNav";
-import RightSidebar from "@/components/RightSidebar";
-import { ScrollThemeProvider } from "@/components/ScrollThemeContext";
-import ScrollThemeWrapper from "@/components/ScrollThemeWrapper";
-import CustomCursor from "@/components/CustomCursor";
-
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -111,6 +107,9 @@ export const metadata: Metadata = {
   },
   verification: {
     google: "Qs96EnDjxH-2OARb9brbTWkE-yMYNlYLcnkk-DrkLnk"
+  },
+  other: {
+    "color-scheme": "light",
   }
 };
 
@@ -265,26 +264,23 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${montserrat.variable} antialiased`}
       >
-        <CustomCursor />
-        <ScrollThemeProvider>
-          <ScrollThemeWrapper>
-            {/* Left Sidebar (Desktop) */}
-            <Sidebar />
+        {children}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-JYC9R89DGW"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
 
-            {/* Main Content */}
-            <main className="flex flex-col w-full">
-              {children}
-            </main>
-
-            {/* Right Sidebar (Desktop) */}
-            <RightSidebar />
-          </ScrollThemeWrapper>
-
-          {/* Mobile Navigation */}
-          <MobileNav />
-        </ScrollThemeProvider>
+            gtag('config', 'G-JYC9R89DGW');
+          `}
+        </Script>
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
 }
-

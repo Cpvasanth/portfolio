@@ -3,11 +3,16 @@
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { FaHome, FaBriefcase, FaUser, FaEnvelope } from "react-icons/fa";
+import { FaHome, FaBriefcase, FaUser, FaEnvelope, FaPenNib } from "react-icons/fa";
 import { useScrollTheme } from "./ScrollThemeContext";
 
 export default function Sidebar() {
     const { scrollTheme } = useScrollTheme();
+    const pathname = usePathname();
+
+    // Hide on individual blog post pages
+    const isBlogPost = pathname?.startsWith("/blog/") && pathname.split("/").length > 2;
+    if (isBlogPost) return null;
 
     // Theme logic
     const isWorksWeb = scrollTheme === "works-web";
@@ -40,6 +45,7 @@ export default function Sidebar() {
             <div className="flex flex-col gap-8">
                 <NavLink href="/" icon={<FaHome size={20} />} label="Home" theme={scrollTheme} isDark={isDark} />
                 <NavLink href="/works" icon={<FaBriefcase size={20} />} label="Works" theme={scrollTheme} isDark={isDark} />
+                <NavLink href="/blog" icon={<FaPenNib size={20} />} label="Blog" theme={scrollTheme} isDark={isDark} />
                 <NavLink href="/about" icon={<FaUser size={20} />} label="About" theme={scrollTheme} isDark={isDark} />
                 <NavLink href="/contact" icon={<FaEnvelope size={20} />} label="Contact" theme={scrollTheme} isDark={isDark} />
             </div>
