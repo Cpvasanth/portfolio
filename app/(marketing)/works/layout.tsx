@@ -54,6 +54,39 @@ const worksJsonLd = {
             ]
         },
         {
+            "@type": "Service",
+            "name": "Web Design & Development",
+            "description": "Custom website development using React, Next.js, and modern technologies. Fast, responsive, and SEO-optimized websites for startups and businesses.",
+            "provider": {
+                "@type": "Person",
+                "@id": "https://imvasa.vercel.app/#person"
+            },
+            "serviceType": "Web Development",
+            "areaServed": "Worldwide"
+        },
+        {
+            "@type": "Service",
+            "name": "SEO Services",
+            "description": "Technical SEO audits, on-page optimization, content strategy, and link building to improve search rankings and organic traffic within 3-6 months.",
+            "provider": {
+                "@type": "Person",
+                "@id": "https://imvasa.vercel.app/#person"
+            },
+            "serviceType": "Search Engine Optimization",
+            "areaServed": "Worldwide"
+        },
+        {
+            "@type": "Service",
+            "name": "Digital Marketing",
+            "description": "Data-driven digital marketing strategies including paid ads, content marketing, and conversion optimization for measurable ROI.",
+            "provider": {
+                "@type": "Person",
+                "@id": "https://imvasa.vercel.app/#person"
+            },
+            "serviceType": "Digital Marketing",
+            "areaServed": "Worldwide"
+        },
+        {
             "@type": "FAQPage",
             "mainEntity": [
                 {
@@ -84,6 +117,7 @@ const worksJsonLd = {
         }
     ]
 };
+
 
 export default function WorksLayout({
     children,

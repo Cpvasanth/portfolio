@@ -122,11 +122,24 @@ const jsonLd = {
       "@type": "Person",
       "@id": "https://imvasa.vercel.app/#person",
       "name": "Vasa",
-      "alternateName": "Vasanth",
+      "alternateName": ["Vasanth", "cpvasanth", "cpvasanthk", "cpvasanthkumar", "vasanthakumar"],
       "url": "https://imvasa.vercel.app",
       "image": "https://imvasa.vercel.app/logo.png",
-      "description": "Affordable freelance web developer, SEO expert, and digital marketing specialist offering premium services at competitive rates.",
+      "description": "Affordable freelance web developer, SEO expert, and digital marketing specialist based in Chennai, India. 100% Upwork job success rate with $500k+ client revenue generated.",
       "jobTitle": "Freelance Web Developer & SEO Expert",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Self-employed Freelancer"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Chennai",
+        "addressCountry": "India"
+      },
+      "nationality": {
+        "@type": "Country",
+        "name": "India"
+      },
       "sameAs": [
         "https://www.linkedin.com/in/cpvasanth/",
         "https://github.com/Cpvasanth",
@@ -147,7 +160,13 @@ const jsonLd = {
         "Figma",
         "firebase",
         "AI engineering"
-      ]
+      ],
+      "hasOccupation": {
+        "@type": "Occupation",
+        "name": "Freelance Web Developer",
+        "occupationalCategory": "15-1254.00",
+        "skills": ["JavaScript", "React", "Next.js", "SEO", "Node.js", "Tailwind CSS", "Digital Marketing", "AI Engineering", "Figma", "firebase", "Supabase", "Stripe", "Express.js", "firebase", "NestJs"]
+      }
     },
     // ProfessionalService Schema - For Local/Service Results
     {
@@ -160,6 +179,12 @@ const jsonLd = {
       "description": "Affordable freelance web development, SEO, and digital marketing services. 60-80% off for first-time clients.",
       "priceRange": "$$",
       "founder": { "@id": "https://imvasa.vercel.app/#person" },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Chennai",
+        "addressRegion": "Tamil Nadu",
+        "addressCountry": "India"
+      },
       "areaServed": [
         { "@type": "Country", "name": "United States" },
         { "@type": "Country", "name": "United Kingdom" },

@@ -19,10 +19,11 @@ export default function robots(): MetadataRoute.Robots {
                 userAgent: 'Bingbot',
                 allow: '/',
             },
-            // AI crawlers - allow for visibility
+            // AI crawlers - allow for GEO visibility
             {
                 userAgent: 'GPTBot',
                 allow: '/',
+                disallow: ['/api/', '/admin/'],
             },
             {
                 userAgent: 'ChatGPT-User',
@@ -39,6 +40,33 @@ export default function robots(): MetadataRoute.Robots {
             {
                 userAgent: 'PerplexityBot',
                 allow: '/',
+            },
+            // Additional AI crawlers for comprehensive coverage
+            {
+                userAgent: 'CCBot',
+                allow: '/',
+                disallow: ['/api/', '/admin/'],
+            },
+            {
+                userAgent: 'Google-Extended',
+                allow: '/',
+            },
+            {
+                userAgent: 'Cohere-ai',
+                allow: '/',
+            },
+            {
+                userAgent: 'YouBot',
+                allow: '/',
+            },
+            {
+                userAgent: 'Meta-ExternalAgent',
+                allow: '/',
+            },
+            {
+                userAgent: 'Bytespider',
+                allow: '/',
+                disallow: ['/api/', '/admin/'],
             },
         ],
         sitemap: `${baseUrl}/sitemap.xml`,
