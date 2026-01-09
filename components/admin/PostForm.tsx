@@ -95,15 +95,22 @@ export default function PostForm({ post }: PostFormProps) {
         setFormData(prev => ({ ...prev, image_url: "" }));
     };
 
-    const handleSubmit = async (e: React.FormEvent) => {
-        e.preventDefault();
+    const handleSave = async (publishedStatus: boolean | null = null) => {
         setLoading(true);
         setError(null);
 
+        const currentPublishedState = publishedStatus !== null ? publishedStatus : formData.published;
+
         const dataToSave = {
             ...formData,
+            published: currentPublishedState,
             updated_at: new Date().toISOString(),
         };
+
+        // Optimistically update local state if changing publish status
+        if (publishedStatus !== null) {
+            setFormData(prev => ({ ...prev, published: publishedStatus }));
+        }
 
         let error;
 
@@ -121,6 +128,7 @@ export default function PostForm({ post }: PostFormProps) {
         if (error) {
             setError(error.message);
             setLoading(false);
+            // Revert local state if needed (optional, complexity vs value)
         } else {
             router.push("/admin/blog");
             router.refresh();
@@ -181,8 +189,28 @@ export default function PostForm({ post }: PostFormProps) {
                         </button>
                     )}
 
+                    {!formData.published ? (
+                        <button
+                            onClick={() => handleSave(true)}
+                            disabled={loading}
+                            className="bg-green-600 text-white text-sm font-medium px-4 py-1.5 rounded hover:bg-green-500 transition-all flex items-center gap-2"
+                        >
+                            {loading ? <FaSpinner className="animate-spin" /> : <FaCloudUploadAlt />}
+                            Publish
+                        </button>
+                    ) : (
+                        <button
+                            onClick={() => handleSave(false)}
+                            disabled={loading}
+                            className="bg-yellow-600 text-white text-sm font-medium px-4 py-1.5 rounded hover:bg-yellow-500 transition-all flex items-center gap-2"
+                        >
+                            {loading ? <FaSpinner className="animate-spin" /> : <FaSave />}
+                            Unpublish
+                        </button>
+                    )}
+
                     <button
-                        onClick={handleSubmit}
+                        onClick={() => handleSave(null)}
                         disabled={loading}
                         className="bg-blue-600 text-white text-sm font-medium px-4 py-1.5 rounded hover:bg-blue-500 transition-all flex items-center gap-2"
                     >
