@@ -80,8 +80,8 @@ const aboutJsonLd = {
                 "ratingValue": "5"
             },
             "itemReviewed": {
-                "@type": "Person",
-                "@id": "https://imvasa.vercel.app/#person"
+                "@type": "ProfessionalService",
+                "@id": "https://imvasa.vercel.app/#business"
             }
         },
         {
@@ -96,8 +96,8 @@ const aboutJsonLd = {
                 "ratingValue": "5"
             },
             "itemReviewed": {
-                "@type": "Person",
-                "@id": "https://imvasa.vercel.app/#person"
+                "@type": "ProfessionalService",
+                "@id": "https://imvasa.vercel.app/#business"
             }
         }
     ]

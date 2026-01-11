@@ -9,27 +9,27 @@ export default function MobileNav() {
     const isDark = scrollTheme === "footer-dark";
 
     return (
-        <nav className={`fixed bottom-0 left-0 right-0 z-50 flex h-16 w-full items-center justify-around border-t px-4 backdrop-blur-md md:hidden transition-all duration-500 ${isDark ? "bg-black border-transparent text-white" : "bg-white/90 border-zinc-200 text-zinc-500"}`}>
-            <Link href="/" className={`flex flex-col items-center gap-1 hover:text-black ${isDark ? "hover:text-white" : ""}`}>
-                <FaHome size={20} />
-                <span className="text-[10px]">Home</span>
+        <nav className={`fixed bottom-0 left-0 right-0 z-50 flex h-20 w-full items-center justify-around border-t px-4 backdrop-blur-md md:hidden transition-all duration-500 safe-bottom ${isDark ? "bg-black border-transparent text-white" : "bg-white/90 border-zinc-200 text-zinc-500"}`}>
+            <Link href="/" className={`flex flex-col items-center justify-center gap-1 min-w-[56px] min-h-[56px] active:scale-95 transition-transform ${isDark ? "active:text-white" : "active:text-black"}`}>
+                <FaHome size={22} />
+                <span className="text-[11px] font-medium">Home</span>
             </Link>
-            <Link href="/works" className={`flex flex-col items-center gap-1 hover:text-black ${isDark ? "hover:text-white" : ""}`}>
-                <FaBriefcase size={20} />
-                <span className="text-[10px]">Works</span>
+            <Link href="/works" className={`flex flex-col items-center justify-center gap-1 min-w-[56px] min-h-[56px] active:scale-95 transition-transform ${isDark ? "active:text-white" : "active:text-black"}`}>
+                <FaBriefcase size={22} />
+                <span className="text-[11px] font-medium">Works</span>
             </Link>
-            <div className="flex flex-col items-center justify-center -mt-8">
-                <div className={`flex h-12 w-12 items-center justify-center rounded-full shadow-lg ${isDark ? "bg-white text-black" : "bg-black text-white"}`}>
-                    <span className="text-sm font-bold tracking-tighter">VA</span>
+            <div className="flex flex-col items-center justify-center -mt-6">
+                <div className={`flex h-14 w-14 items-center justify-center rounded-full shadow-lg ${isDark ? "bg-white text-black" : "bg-black text-white"}`}>
+                    <span className="text-base font-bold tracking-tighter">VA</span>
                 </div>
             </div>
-            <Link href="/about" className={`flex flex-col items-center gap-1 hover:text-black ${isDark ? "hover:text-white" : ""}`}>
-                <FaUser size={20} />
-                <span className="text-[10px]">About</span>
+            <Link href="/about" className={`flex flex-col items-center justify-center gap-1 min-w-[56px] min-h-[56px] active:scale-95 transition-transform ${isDark ? "active:text-white" : "active:text-black"}`}>
+                <FaUser size={22} />
+                <span className="text-[11px] font-medium">About</span>
             </Link>
-            <Link href="/contact" className={`flex flex-col items-center gap-1 hover:text-black ${isDark ? "hover:text-white" : ""}`}>
-                <FaEnvelope size={20} />
-                <span className="text-[10px]">Contact</span>
+            <Link href="/contact" className={`flex flex-col items-center justify-center gap-1 min-w-[56px] min-h-[56px] active:scale-95 transition-transform ${isDark ? "active:text-white" : "active:text-black"}`}>
+                <FaEnvelope size={22} />
+                <span className="text-[11px] font-medium">Contact</span>
             </Link>
         </nav>
     );

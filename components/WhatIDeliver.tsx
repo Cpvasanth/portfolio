@@ -49,14 +49,14 @@ export default function WhatIDeliver() {
             className="relative bg-white/0" // Transparent to show global bg
             onViewportEnter={() => setScrollTheme("light")}
         >
-            <div className="mb-24 pt-20">
-                <h2 className="max-w-4xl text-5xl font-bold tracking-tighter sm:text-6xl md:text-7xl">
+            <div className="mb-16 md:mb-24 pt-12 md:pt-20 px-4 md:px-10 lg:pl-32">
+                <h2 className="max-w-4xl text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tighter">
                     Freelance Services: <br />
                     <span className="text-zinc-400">Web Development, SEO & Marketing</span>
                 </h2>
             </div>
 
-            <div className="flex flex-col items-center pb-[50vh]">
+            <div className="flex flex-col items-center pb-20 md:pb-[50vh]">
                 {services.map((service, index) => {
                     const targetScale = 1 - (services.length - index) * 0.05;
                     return (
@@ -109,34 +109,25 @@ const Card = ({
         offset: ["start end", "start start"],
     });
 
-    // Scale logic: Scales down as it goes up/gets covered
-    // We use the parent's progress to control the scaling of previous cards
-    // But a simpler per-card "stacking" effect is often:
-    // position: sticky + top: calc(...)
-    // scale: driven by the *next* card coming in?
-    // Let's rely on the simple scrollYProgress of the PARENT container passed down.
     const scale = useTransform(progress, range, [1, targetScale]);
-
-    // Calculate top position to center comfortably
-    // 50vh = center, minus half card height (approx 350px/400px?)
-    // Let's use a dynamic calculation or fixed top. 
-    // User asked for "tick comfortably in the middle".
-    // Let's say top-24 (approx 100px) + spacing, or rigid `top-[20vh]`.
-    // If we set all to `top-[20vh]`, they stack perfectly on top.
 
     return (
         <div
             ref={container}
-            className="sticky top-[15vh] flex h-[80vh] w-full items-center justify-center"
+            className="md:sticky md:top-[15vh] flex md:h-[80vh] w-full items-center justify-center my-6 md:my-0"
         >
             <motion.div
                 style={{
-                    scale,
+                    scale: typeof window !== 'undefined' && window.innerWidth < 768 ? 1 : scale,
                 }}
-                className={`relative flex h-full w-full max-w-7xl rounded-[2.5rem] p-8 shadow-2xl md:p-14 ${color} ${textColor} origin-top overflow-hidden border-4 border-white/20`}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, ease: "easeOut" }}
+                viewport={{ once: true, margin: "-50px" }}
+                className={`relative flex h-auto min-h-[400px] md:h-full w-full max-w-7xl rounded-[2.5rem] p-8 shadow-2xl md:p-14 ${color} ${textColor} origin-top overflow-hidden border-4 border-white/20`}
             >
                 {/* Left: Text Content */}
-                <div className="flex flex-col justify-center flex-1 z-10">
+                <div className="flex flex-col justify-center flex-1 z-10 py-8 md:py-0">
                     {/* Header: Title & Number */}
                     <div className="flex items-start justify-between">
                         <h3 className="max-w-lg text-3xl font-extrabold leading-tight tracking-tight md:text-4xl lg:text-5xl">

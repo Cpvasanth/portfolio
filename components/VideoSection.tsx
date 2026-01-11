@@ -35,7 +35,7 @@ export default function VideoSection() {
     }, []);
 
     return (
-        <section className="w-full px-4 py-20 md:px-10 lg:pl-32">
+        <section className="w-full px-4 py-16 md:py-20 md:px-10 lg:pl-32 pb-mobile-nav">
             <div className="w-full max-w-7xl">
                 <video
                     ref={videoRef}

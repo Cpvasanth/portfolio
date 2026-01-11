@@ -22,11 +22,54 @@ body {
   cursor: none;
 }
 
-a,
-button,
-[role="button"],
-input,
-textarea,
-select {
-  cursor: none;
+/* Hide custom cursor on touch devices */
+@media (hover: none) and (pointer: coarse) {
+  body,
+  a,
+  button,
+  [role="button"],
+  input,
+  textarea,
+  select {
+    cursor: auto !important;
+  }
+}
+
+/* Desktop only - custom cursor */
+@media (hover: hover) and (pointer: fine) {
+  a,
+  button,
+  [role="button"],
+  input,
+  textarea,
+  select {
+    cursor: none;
+  }
+}
+
+/* iOS Safe Area Support */
+@supports (padding-bottom: env(safe-area-inset-bottom)) {
+  .safe-bottom {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+}
+
+/* Utility for content above mobile nav */
+.pb-mobile-nav {
+  padding-bottom: 5rem; /* 80px - matches nav height */
+}
+
+@media (min-width: 768px) {
+  .pb-mobile-nav {
+    padding-bottom: 0;
+  }
+}
+
+/* Hide scrollbar for horizontal scroll elements */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }

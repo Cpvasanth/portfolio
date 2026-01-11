@@ -35,7 +35,7 @@ export default function FAQ() {
             <div className="flex w-full max-w-6xl flex-col gap-12 lg:flex-row lg:items-start ">
                 {/* Left: Title */}
                 <div className="lg:w-1/3">
-                    <h2 className="text-6xl font-bold tracking-tighter sm:text-2xl md:text-4xl text-black">
+                    <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tighter text-black">
                         Frequently asked questions
                     </h2>
                 </div>

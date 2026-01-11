@@ -112,15 +112,15 @@ function Socials() {
 
 function MainContent() {
     return (
-        <div className="flex flex-col items-center justify-center gap-12 text-center pointer-events-none">
-            <p className="max-w-5xl text-5xl font-bold leading-tight tracking-tighter sm:text-6xl md:text-7xl lg:text-8xl" aria-label="Call to action">
+        <div className="flex flex-col items-center justify-center gap-8 md:gap-12 text-center pointer-events-none pb-24 md:pb-0">
+            <p className="max-w-5xl text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-tight tracking-tighter px-4" aria-label="Call to action">
                 Where attention <br />
                 <span className="opacity-50">turns into action.</span>
             </p>
 
             <Link
                 href="/contact"
-                className="group relative overflow-hidden rounded-full bg-zinc-900 px-10 py-5 text-xl font-bold transition-all hover:scale-105 hover:bg-zinc-800 md:px-16 md:py-8 md:text-2xl text-zinc-600 pointer-events-auto"
+                className="group relative overflow-hidden rounded-full bg-zinc-900 px-8 py-4 md:px-16 md:py-8 text-lg md:text-2xl font-bold transition-all hover:scale-105 hover:bg-zinc-800 text-zinc-600 pointer-events-auto active:scale-95"
             >
                 <span className="relative z-10">Let's Talk</span>
             </Link>
@@ -130,7 +130,7 @@ function MainContent() {
 
 function Copyright() {
     return (
-        <div className="flex w-full items-end justify-center pb-10 pointer-events-auto relative z-30">
+        <div className="hidden md:flex w-full items-end justify-center pb-10 pointer-events-auto relative z-30">
             <p className="font-mono text-sm uppercase tracking-widest text-zinc-600 md:text-base">
                 ©2026 Vasa. All rights reserved.
             </p>

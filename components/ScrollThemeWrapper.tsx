@@ -25,25 +25,33 @@ export default function ScrollThemeWrapper({ children }: { children: ReactNode }
     // Blog page uses dark theme
 
     // Theme Logic
-    let bgColor = "bg-[#fbf9ef]";
+    let desktopBgColor = "md:bg-[#fbf9ef]";
 
     // Blog pages use light theme
     if (pathname?.startsWith("/blog")) {
-        bgColor = "bg-[#fbf9ef]";
+        desktopBgColor = "md:bg-[#fbf9ef]";
     } else if (scrollTheme === "works-seo") {
-        bgColor = "bg-[#202124]"; // Google Dark Mode Grey
+        desktopBgColor = "md:bg-[#202124]"; // Google Dark Mode Grey
     } else if (scrollTheme === "works-marketing") {
-        bgColor = "bg-[#0a0a0a]"; // Social Media Dark
+        desktopBgColor = "md:bg-[#0a0a0a]"; // Social Media Dark
     } else if (scrollTheme === "footer-dark" || scrollTheme?.startsWith("works-")) {
-        bgColor = "bg-black"; // Web Design / Default Dark
+        desktopBgColor = "md:bg-black"; // Web Design / Default Dark
     }
 
     // Check if it's a blog post page
     const isBlogPost = pathname?.startsWith("/blog/") && pathname.split("/").length > 2;
+    
+    // Base background is #fbf9ef (light) for mobile, unless it's a works page (dark).
+    // On desktop, it takes whatever desktopBgColor is set to.
+    const isWorksPage = pathname?.startsWith("/works");
+    const baseBgColor = isWorksPage ? "bg-black" : "bg-[#fbf9ef]";
+    const finalBgColor = isBlogPost ? "bg-[#fbf9ef]" : `${baseBgColor} ${desktopBgColor}`;
+
+
 
     return (
         <div
-            className={`flex flex-col ${isBlogPost ? "w-full" : "md:grid md:grid-cols-[10%_80%_10%]"} min-h-screen transition-colors duration-500 ${bgColor}`}
+            className={`flex flex-col ${isBlogPost ? "w-full" : "md:grid md:grid-cols-[10%_80%_10%]"} min-h-screen transition-colors duration-500 ${finalBgColor}`}
         >
             {children}
         </div>
